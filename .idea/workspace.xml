@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747f8f86-74b4-46cc-86c4-6c2f2bf05b0e" name="Changes" comment="Third commit">
-      <change afterPath="$PROJECT_DIR$/project-app/src/assets/settings-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-app/src/pages/Header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-app/src/pages/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-app/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-app/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/index.css" afterDir="false" />
-    </list>
+    <list default="true" id="747f8f86-74b4-46cc-86c4-6c2f2bf05b0e" name="Changes" comment="Header added" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,6 +18,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -57,7 +53,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "yannick",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/yanni/OneDrive - edu.ti.ch/CPT Locarno/2. anno/IA/Modulo 294/04 App/project-app",
     "list.type.of.created.stylesheet": "CSS",
@@ -92,7 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1743489263221</updated>
       <workItem from="1743489264803" duration="521000" />
-      <workItem from="1743490002304" duration="10779000" />
+      <workItem from="1743490002304" duration="12189000" />
     </task>
     <task id="LOCAL-00001" summary="Third commit">
       <option name="closed" value="true" />
@@ -102,7 +98,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743494388054</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Header added">
+      <option name="closed" value="true" />
+      <created>1743504497311</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1743504497311</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +115,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Second commit" />
     <MESSAGE value="Third commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Third commit" />
+    <MESSAGE value="Header added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Header added" />
   </component>
 </project>
