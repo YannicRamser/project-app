@@ -1,14 +1,18 @@
 import {BrowserRouter, RouterProvider} from "react-router-dom";
 import './App.css'
 import {createBrowserRouter} from "react-router-dom";
+import Home from './pages/Home';
 
 const router = createBrowserRouter([
     // { path: '/', element: <Page /> }
+    { path: '/', element: <Home /> }
 ])
 
 function App() {
+    return (
+        <RouterProvider router={router} />
+    )
 
-    <RouterProvider router={router} />
 
 
   // const [count, setCount] = useState(0)
