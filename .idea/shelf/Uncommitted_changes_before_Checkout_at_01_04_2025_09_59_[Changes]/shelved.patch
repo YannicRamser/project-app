@@ -1,0 +1,106 @@
+Index: project-app/src/App.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import { useState } from 'react'\r\nimport reactLogo from './assets/react.svg'\r\nimport viteLogo from '/vite.svg'\r\nimport {BrowserRouter, RouterProvider} from \"react-router-dom\";\r\nimport './App.css'\r\nimport {createBrowserRouter} from \"react-router-dom\";\r\n\r\nconst router = createBrowserRouter([\r\n    // { path: '/', element: <Page /> }\r\n])\r\n\r\nfunction App() {\r\n\r\n    <RouterProvider router={router} />\r\n\r\n\r\n  // const [count, setCount] = useState(0)\r\n  //\r\n  // return (\r\n  //   <>\r\n  //     <div>\r\n  //       <a href=\"https://vite.dev\" target=\"_blank\">\r\n  //         <img src={viteLogo} className=\"logo\" alt=\"Vite logo\" />\r\n  //       </a>\r\n  //       <a href=\"https://react.dev\" target=\"_blank\">\r\n  //         <img src={reactLogo} className=\"logo react\" alt=\"React logo\" />\r\n  //       </a>\r\n  //     </div>\r\n  //     <h1>Vite + React</h1>\r\n  //     <div className=\"card\">\r\n  //       <button onClick={() => setCount((count) => count + 1)}>\r\n  //         count is {count}\r\n  //       </button>\r\n  //       <p>\r\n  //         Edit <code>src/App.jsx</code> and save to test HMR\r\n  //       </p>\r\n  //     </div>\r\n  //     <p className=\"read-the-docs\">\r\n  //       Click on the Vite and React logos to learn more\r\n  //     </p>\r\n  //   </>\r\n  // )\r\n}\r\n\r\nexport default App\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/project-app/src/App.jsx b/project-app/src/App.jsx
+--- a/project-app/src/App.jsx	(revision f3c2549b952bf42d7998f1c709d44b924aa24349)
++++ b/project-app/src/App.jsx	(date 1743494270367)
+@@ -1,6 +1,3 @@
+-import { useState } from 'react'
+-import reactLogo from './assets/react.svg'
+-import viteLogo from '/vite.svg'
+ import {BrowserRouter, RouterProvider} from "react-router-dom";
+ import './App.css'
+ import {createBrowserRouter} from "react-router-dom";
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"747f8f86-74b4-46cc-86c4-6c2f2bf05b0e\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/.gitignore\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/vcs.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/vcs.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\"><![CDATA[{\r\n  \"lastFilter\": {\r\n    \"state\": \"OPEN\",\r\n    \"assignee\": \"YannicRamser\"\r\n  }\r\n}]]></component>\r\n  <component name=\"GithubPullRequestsUISettings\"><![CDATA[{\r\n  \"selectedUrlAndAccountId\": {\r\n    \"url\": \"https://github.com/ElPapuSi5j/m294-m295.git\",\r\n    \"accountId\": \"383babac-cdab-4b3b-9798-b51c510ff90e\"\r\n  }\r\n}]]></component>\r\n  <component name=\"ProjectColorInfo\"><![CDATA[{\r\n  \"customColor\": \"\",\r\n  \"associatedIndex\": 5\r\n}]]></component>\r\n  <component name=\"ProjectId\" id=\"2v7HbHmvhH4QvyXQZpH7tjccxKz\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-WS-243.26053.12\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"747f8f86-74b4-46cc-86c4-6c2f2bf05b0e\" name=\"Changes\" comment=\"\" />\r\n      <created>1743489263221</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1743489263221</updated>\r\n      <workItem from=\"1743489264803\" duration=\"521000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision f3c2549b952bf42d7998f1c709d44b924aa24349)
++++ b/.idea/workspace.xml	(date 1743494270458)
+@@ -4,9 +4,8 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="747f8f86-74b4-46cc-86c4-6c2f2bf05b0e" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
++    <list default="true" id="747f8f86-74b4-46cc-86c4-6c2f2bf05b0e" name="Changes" comment="Second commit">
++      <change beforePath="$PROJECT_DIR$/project-app/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/App.jsx" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -16,22 +15,22 @@
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+-  "lastFilter": {
+-    "state": "OPEN",
+-    "assignee": "YannicRamser"
++  <component name="GitHubPullRequestSearchHistory">{
++  &quot;lastFilter&quot;: {
++    &quot;state&quot;: &quot;OPEN&quot;,
++    &quot;assignee&quot;: &quot;YannicRamser&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="GithubPullRequestsUISettings"><![CDATA[{
+   "selectedUrlAndAccountId": {
+-    "url": "https://github.com/ElPapuSi5j/m294-m295.git",
++    "url": "https://github.com/YannicRamser/project-app.git",
+     "accountId": "383babac-cdab-4b3b-9798-b51c510ff90e"
+   }
+ }]]></component>
+-  <component name="ProjectColorInfo"><![CDATA[{
+-  "customColor": "",
+-  "associatedIndex": 5
+-}]]></component>
++  <component name="ProjectColorInfo">{
++  &quot;customColor&quot;: &quot;&quot;,
++  &quot;associatedIndex&quot;: 5
++}</component>
+   <component name="ProjectId" id="2v7HbHmvhH4QvyXQZpH7tjccxKz" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+@@ -41,12 +40,15 @@
+   "keyToString": {
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "RunOnceActivity.git.unshallow": "true",
+-    "git-widget-placeholder": "main",
++    "git-widget-placeholder": "master",
++    "ignore.virus.scanning.warn.message": "true",
++    "last_opened_file_path": "C:/Users/yanni/OneDrive - edu.ti.ch/CPT Locarno/2. anno/IA/Modulo 294/04 App/project-app",
+     "node.js.detected.package.eslint": "true",
+     "node.js.detected.package.tslint": "true",
+     "node.js.selected.package.eslint": "(autodetect)",
+     "node.js.selected.package.tslint": "(autodetect)",
+     "nodejs_package_manager_path": "npm",
++    "ts.external.directory.path": "C:\\Users\\yanni\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+     "vue.rearranger.settings.migration": "true"
+   }
+ }]]></component>
+@@ -66,10 +68,15 @@
+       <option name="presentableId" value="Default" />
+       <updated>1743489263221</updated>
+       <workItem from="1743489264803" duration="521000" />
++      <workItem from="1743490002304" duration="4214000" />
+     </task>
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="Second commit" />
++    <option name="LAST_COMMIT_MESSAGE" value="Second commit" />
++  </component>
+ </project>
+\ No newline at end of file
