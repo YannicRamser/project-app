@@ -3,13 +3,15 @@ import './App.css'
 import Header from './pages/Header'
 import {createBrowserRouter} from "react-router-dom";
 import Home from './pages/Home';
+import Login from "./page/Login";
+import Dashboard from './pages/Dashboard'
 
 const router = createBrowserRouter([
     {path: '/header', element: <Header />},
     {path: '/', element: <Home /> },
     {path: '/login', element: <Login />}
+    {path: '/Dashboard', element: <Dashboard /> }
 ])
-import Login from "./page/Login";
 
 function App() {
     return (
