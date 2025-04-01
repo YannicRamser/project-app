@@ -1,0 +1,37 @@
+#header-container {
+    display: flex;
+    flex-direction: row;
+}
+
+#header-title {
+    width: fit-content;
+    padding: 10px;
+    margin: 0;
+    border-right: 2px solid black;
+}
+
+#header-icons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#header-navBar {
+    display: flex;
+    flex-direction: row;
+}
+
+#header-navIcon {
+    margin: auto 10px;
+    padding: 0;
+}
+
+#header-settings {
+    align-content: flex-end;
+}
+
+#header-line {
+    margin: 0;
+    border: 1px solid black;
+}

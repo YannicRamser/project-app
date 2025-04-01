@@ -4,13 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747f8f86-74b4-46cc-86c4-6c2f2bf05b0e" name="Changes" comment="Second commit">
+    <list default="true" id="747f8f86-74b4-46cc-86c4-6c2f2bf05b0e" name="Changes" comment="Third commit">
+      <change afterPath="$PROJECT_DIR$/project-app/src/assets/settings-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-app/src/pages/Header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-app/src/pages/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-app/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-app/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -21,17 +35,20 @@
     &quot;assignee&quot;: &quot;YannicRamser&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/YannicRamser/project-app.git",
-    "accountId": "383babac-cdab-4b3b-9798-b51c510ff90e"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/YannicRamser/project-app.git&quot;,
+    &quot;accountId&quot;: &quot;383babac-cdab-4b3b-9798-b51c510ff90e&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2v7HbHmvhH4QvyXQZpH7tjccxKz" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -43,6 +60,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/yanni/OneDrive - edu.ti.ch/CPT Locarno/2. anno/IA/Modulo 294/04 App/project-app",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -52,6 +70,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yanni\OneDrive - edu.ti.ch\CPT Locarno\2. anno\IA\Modulo 294\04 App\project-app\src\assets" />
+      <recent name="C:\Users\yanni\OneDrive - edu.ti.ch\CPT Locarno\2. anno\IA\Modulo 294\04 App\project-app\src\pages" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -68,8 +92,17 @@
       <option name="presentableId" value="Default" />
       <updated>1743489263221</updated>
       <workItem from="1743489264803" duration="521000" />
-      <workItem from="1743490002304" duration="4214000" />
+      <workItem from="1743490002304" duration="10779000" />
     </task>
+    <task id="LOCAL-00001" summary="Third commit">
+      <option name="closed" value="true" />
+      <created>1743494388054</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1743494388054</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -77,6 +110,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Second commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Second commit" />
+    <MESSAGE value="Third commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Third commit" />
   </component>
 </project>
