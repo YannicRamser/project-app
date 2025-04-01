@@ -1,14 +1,17 @@
 import {BrowserRouter, RouterProvider} from "react-router-dom";
 import './App.css'
 import {createBrowserRouter} from "react-router-dom";
+import Dashboard from './pages/Dashboard'
 
 const router = createBrowserRouter([
-    // { path: '/', element: <Page /> }
+    { path: '/Dashboard', element: <Dashboard /> }
 ])
 
 function App() {
+return (
+        <RouterProvider router={router} />
+    )
 
-    <RouterProvider router={router} />
 
 
   // const [count, setCount] = useState(0)
