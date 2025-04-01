@@ -6,8 +6,10 @@ import Home from './pages/Home';
 
 const router = createBrowserRouter([
     {path: '/header', element: <Header />},
-    { path: '/', element: <Home /> }
+    {path: '/', element: <Home /> },
+    {path: '/login', element: <Login />}
 ])
+import Login from "./page/Login";
 
 function App() {
     return (
