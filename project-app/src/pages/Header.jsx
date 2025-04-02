@@ -8,15 +8,15 @@ export default function Header() {
 
                 <div id="header-icons">
                     <div id="header-navBar">
-                        <h2 id="header-navIcon">Home</h2>
-                        <h2 id="header-navIcon">Dashboard</h2>
+                        <h2 id="header-navIcon"><a href="/">Home</a></h2>
+                        <h2 id="header-navIcon"><a href="/dashboard">Dashboard</a></h2>
                     </div>
 
                     <img id="header-settings" src="../assets/settings-icon.png" width={40} height={40} alt="Settings"/>
                 </div>
 
             </div>
-            <div id="header-line"/>
+            <div className="line"/>
         </>
     )
 

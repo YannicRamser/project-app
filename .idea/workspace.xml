@@ -4,17 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747f8f86-74b4-46cc-86c4-6c2f2bf05b0e" name="Changes" comment="Second commit">
-      <change afterPath="$PROJECT_DIR$/project-app/src/pages/Dashboard.jsx" afterDir="false" />
+    <list default="true" id="747f8f86-74b4-46cc-86c4-6c2f2bf05b0e" name="Changes" comment="Full project">
+      <change afterPath="$PROJECT_DIR$/project-app/src/pages/Corso.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-app/src/pages/Login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-app/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-app/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-app/src/page/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/pages/Corso.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-app/src/page/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/pages/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-app/src/pages/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/pages/Dashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-app/src/pages/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/pages/Header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-app/src/pages/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/pages/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-app/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/pages/Home.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/marco" />
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="yannick" />
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="yannick" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -34,6 +60,9 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2v7HbHmvhH4QvyXQZpH7tjccxKz" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -45,15 +74,21 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/yanni/OneDrive - edu.ti.ch/CPT Locarno/2. anno/IA/Modulo 294/04 App/project-app",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Users\\barcella\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "ts.external.directory.path": "C:\\Users\\yanni\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yanni\OneDrive - edu.ti.ch\CPT Locarno\2. anno\IA\Modulo 294\04 App\project-app\src\pages" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -73,13 +108,34 @@
       <workItem from="1743490002304" duration="4214000" />
       <workItem from="1743496291769" duration="5243000" />
     </task>
+    <task id="LOCAL-00001" summary="Full project">
+      <option name="closed" value="true" />
+      <created>1743506621094</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1743506621094</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Second commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Second commit" />
+    <MESSAGE value="Full project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Full project" />
   </component>
 </project>
