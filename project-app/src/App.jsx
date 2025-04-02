@@ -3,7 +3,7 @@ import './App.css'
 import Header from './pages/Header'
 import {createBrowserRouter} from "react-router-dom";
 import Home from './pages/Home';
-import Login from "./page/Login";
+import Login from "./pages/Login.jsx";
 import Dashboard from './pages/Dashboard'
 
 const router = createBrowserRouter([
