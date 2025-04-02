@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747f8f86-74b4-46cc-86c4-6c2f2bf05b0e" name="Changes" comment="create Home">
+    <list default="true" id="747f8f86-74b4-46cc-86c4-6c2f2bf05b0e" name="Changes" comment="Second commit">
+      <change afterPath="$PROJECT_DIR$/project-app/src/pages/Home.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-app/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/App.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,11 +15,6 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -26,12 +23,12 @@
     &quot;assignee&quot;: &quot;YannicRamser&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/YannicRamser/project-app",
-    "accountId": "86cf2496-21bb-4ae8-9926-bebe421aba5e"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/YannicRamser/project-app.git&quot;,
+    &quot;accountId&quot;: &quot;383babac-cdab-4b3b-9798-b51c510ff90e&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5
@@ -45,7 +42,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Andrea",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/yanni/OneDrive - edu.ti.ch/CPT Locarno/2. anno/IA/Modulo 294/04 App/project-app",
     "node.js.detected.package.eslint": "true",
@@ -74,17 +71,8 @@
       <updated>1743489263221</updated>
       <workItem from="1743489264803" duration="521000" />
       <workItem from="1743490002304" duration="4214000" />
-      <workItem from="1743496157152" duration="5718000" />
+      <workItem from="1743496157152" duration="4869000" />
     </task>
-    <task id="LOCAL-00001" summary="create Home">
-      <option name="closed" value="true" />
-      <created>1743504879258</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1743504879259</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -92,7 +80,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Second commit" />
-    <MESSAGE value="create Home" />
-    <option name="LAST_COMMIT_MESSAGE" value="create Home" />
+    <option name="LAST_COMMIT_MESSAGE" value="Second commit" />
   </component>
 </project>
