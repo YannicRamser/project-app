@@ -4,14 +4,127 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747f8f86-74b4-46cc-86c4-6c2f2bf05b0e" name="Changes" comment="Second commit">
-      <change afterPath="$PROJECT_DIR$/project-app/src/pages/Dashboard.jsx" afterDir="false" />
+    <list default="true" id="747f8f86-74b4-46cc-86c4-6c2f2bf05b0e" name="Changes" comment="corsi list made and header modified">
+      <change afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/dequal/dist/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/dequal/dist/index.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/dequal/dist/index.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/dequal/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/dequal/license" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/dequal/lite/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/dequal/lite/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/dequal/lite/index.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/dequal/lite/index.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/dequal/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/dequal/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/cjs/react-compiler-runtime.development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/cjs/react-compiler-runtime.production.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/cjs/react-compiler-runtime.profiling.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/cjs/react-jsx-dev-runtime.development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/cjs/react-jsx-dev-runtime.production.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/cjs/react-jsx-dev-runtime.profiling.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/cjs/react-jsx-dev-runtime.react-server.development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/cjs/react-jsx-dev-runtime.react-server.production.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/cjs/react-jsx-runtime.development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/cjs/react-jsx-runtime.production.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/cjs/react-jsx-runtime.profiling.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/cjs/react-jsx-runtime.react-server.development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/cjs/react-jsx-runtime.react-server.production.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/cjs/react.development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/cjs/react.production.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/cjs/react.react-server.development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/cjs/react.react-server.production.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/compiler-runtime.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/jsx-dev-runtime.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/jsx-dev-runtime.react-server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/jsx-runtime.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/jsx-runtime.react-server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/react/react.react-server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/_internal/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/_internal/config-context-client-BXAm5QZy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/_internal/config-context-client-v7VOFo66.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/_internal/constants.d.mts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/_internal/constants.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/_internal/constants.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/_internal/constants.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/_internal/events.d.mts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/_internal/events.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/_internal/events.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/_internal/events.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/_internal/index.d.mts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/_internal/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/_internal/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/_internal/index.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/_internal/index.react-server.d.mts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/_internal/index.react-server.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/_internal/index.react-server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/_internal/index.react-server.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/_internal/types.d.mts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/_internal/types.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/_internal/types.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/_internal/types.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/immutable/index.d.mts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/immutable/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/immutable/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/immutable/index.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/index/config-client-Bi4rgVRk.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/index/index.d.mts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/index/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/index/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/index/index.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/index/react-server.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/infinite/index.d.mts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/infinite/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/infinite/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/infinite/index.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/infinite/react-server.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/mutation/index.d.mts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/mutation/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/mutation/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/mutation/index.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/subscription/index.d.mts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/subscription/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/subscription/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/dist/subscription/index.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/immutable/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/infinite/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/mutation/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/swr/subscription/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/use-sync-external-store/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/use-sync-external-store/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.native.development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.native.production.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.production.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim/with-selector.development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim/with-selector.production.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/use-sync-external-store/cjs/use-sync-external-store-with-selector.development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/use-sync-external-store/cjs/use-sync-external-store-with-selector.production.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/use-sync-external-store/cjs/use-sync-external-store.development.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/use-sync-external-store/cjs/use-sync-external-store.production.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/use-sync-external-store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/use-sync-external-store/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/use-sync-external-store/shim/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/use-sync-external-store/shim/index.native.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/use-sync-external-store/shim/with-selector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/use-sync-external-store/with-selector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-app/public/Ameti_Logo_sfumature.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-app/public/ameti-icon.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project-app/src/Swr.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-app/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-app/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-app/src/page/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/pages/Corso.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-app/src/page/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/pages/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-app/src/pages/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/pages/Dashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-app/src/assets/settings-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/public/settings-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-app/src/pages/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/pages/Header.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-app/src/pages/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/pages/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project-app/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/pages/Home.jsx" afterDir="false" />
@@ -35,6 +148,11 @@
     <option name="NEW_BASE" value="yannick" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -65,18 +183,27 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "yannick2",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/yanni/OneDrive - edu.ti.ch/CPT Locarno/2. anno/IA/Modulo 294/04 App/project-app",
+    "last_opened_file_path": "C:/Users/yanni/OneDrive - edu.ti.ch/CPT Locarno/2. anno/IA/Modulo 294/04 App/project-app/public",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Users\\barcella\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "ts.external.directory.path": "C:\\Users\\yanni\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yanni\OneDrive - edu.ti.ch\CPT Locarno\2. anno\IA\Modulo 294\04 App\project-app\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yanni\OneDrive - edu.ti.ch\CPT Locarno\2. anno\IA\Modulo 294\04 App\project-app\public" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -96,6 +223,15 @@
       <workItem from="1743490002304" duration="4214000" />
       <workItem from="1743496291769" duration="5243000" />
     </task>
+    <task id="LOCAL-00001" summary="full project">
+      <option name="closed" value="true" />
+      <created>1743579091084</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1743579091084</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +250,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Second commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Second commit" />
+    <MESSAGE value="full project" />
+    <MESSAGE value="corsi list made and header modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="corsi list made and header modified" />
   </component>
 </project>

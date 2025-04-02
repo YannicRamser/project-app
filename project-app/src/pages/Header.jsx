@@ -4,7 +4,9 @@ export default function Header() {
     return (
         <>
             <div id="header-container">
-                <h1 id="header-title">Ameti</h1>
+                <a href="/">
+                    <img src="/Ameti_Logo_sfumature.png" alt="Ameti" height="45" id="header-title" />
+                </a>
 
                 <div id="header-icons">
                     <div id="header-navBar">
@@ -12,7 +14,7 @@ export default function Header() {
                         <h2 id="header-navIcon"><a href="/dashboard">Dashboard</a></h2>
                     </div>
 
-                    <img id="header-settings" src="../assets/settings-icon.png" width={40} height={40} alt="Settings"/>
+                    <img id="header-settings" src="/settings-icon.png" width={40} height={40} alt="Settings"/>
                 </div>
 
             </div>
