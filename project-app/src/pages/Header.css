@@ -3,11 +3,14 @@
     flex-direction: row;
 }
 
+#header-logo-link {
+    border-right: solid 2px #000;
+}
+
 #header-title {
-    width: fit-content;
-    padding: 10px;
+    height: 40px;
+    padding: 8px;
     margin: 0;
-    border-right: 2px solid black;
 }
 
 #header-icons {

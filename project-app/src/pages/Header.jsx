@@ -4,8 +4,8 @@ export default function Header() {
     return (
         <>
             <div id="header-container">
-                <a href="/">
-                    <img src="/Ameti_Logo_sfumature.png" alt="Ameti" height="45" id="header-title" />
+                <a href="/" id="header-logo-link">
+                    <img src="/Ameti_Logo_sfumature.png" alt="Ameti" id="header-title" />
                 </a>
 
                 <div id="header-icons">

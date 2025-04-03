@@ -3,12 +3,16 @@ import Swr from "../Swr";
 
 const infoCorsi = [
     {
+        id: "abc123",
         materia: "Economia",
+        description: "prova test",
         anno: "2024-25",
         docente: "Sciulli"
     },
     {
+        id: "bcd234",
         materia: "Matematica",
+        descrizione: "prova test",
         anno: "2024-25",
         docente: "Giudolin"
     }
@@ -28,7 +32,7 @@ const Home = () => {
                     {/*<ListCorso materia={corso.Materia} anno={corso.Anno} docente={corso.Docente}/>*/}
 
                     <div className="home-corsoContainer">
-                        <a href={`/corso/${corso.materia}`}>
+                        <a href={`/corso/${corso.id}`}>
                             <h2>{corso.materia}</h2>
                         </a>
 
