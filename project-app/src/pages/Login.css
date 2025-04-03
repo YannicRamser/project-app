@@ -17,6 +17,11 @@
     width: 100%;
 }
 
+#Risposta{
+     text-align: left;
+     color: red;
+ }
+
 .input-field {
     justify-content: right;
     display: flex;
