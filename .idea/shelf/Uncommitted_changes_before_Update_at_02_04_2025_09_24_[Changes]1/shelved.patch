@@ -1,0 +1,352 @@
+Index: project-app/src/App.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#app-content {\r\n  max-width: 1200px;\r\n  margin: auto;\r\n  padding: 2rem;\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/project-app/src/App.css b/project-app/src/App.css
+--- a/project-app/src/App.css	(revision 7c94ee113072367b3503ba2c9bc1b1645b99be2f)
++++ b/project-app/src/App.css	(date 1743515610999)
+@@ -1,5 +1,9 @@
+ #app-content {
+-  max-width: 1200px;
++  max-width: 1000px;
+   margin: auto;
+   padding: 2rem;
+ }
++
++.line {
++  border: 1px solid black;
++}
+\ No newline at end of file
+Index: project-app/src/App.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import {BrowserRouter, RouterProvider} from \"react-router-dom\";\r\nimport './App.css'\r\nimport Header from './pages/Header'\r\nimport {createBrowserRouter} from \"react-router-dom\";\r\nimport Home from './pages/Home';\r\nimport Login from \"./page/Login\";\r\nimport Dashboard from './pages/Dashboard'\r\n\r\nconst router = createBrowserRouter([\r\n    {path: '/header', element: <Header />},\r\n    {path: '/', element: <Home /> },\r\n    {path: '/login', element: <Login />},\r\n    {path: '/Dashboard', element: <Dashboard /> }\r\n])\r\n\r\nfunction App() {\r\n    return (\r\n        <div id=\"app-container\">\r\n            <Header />\r\n            <div id=\"app-content\">\r\n                <RouterProvider router={router}/>\r\n            </div>\r\n        </div>\r\n    )\r\n}\r\n\r\nexport default App\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/project-app/src/App.jsx b/project-app/src/App.jsx
+--- a/project-app/src/App.jsx	(revision 7c94ee113072367b3503ba2c9bc1b1645b99be2f)
++++ b/project-app/src/App.jsx	(date 1743513550756)
+@@ -3,14 +3,15 @@
+ import Header from './pages/Header'
+ import {createBrowserRouter} from "react-router-dom";
+ import Home from './pages/Home';
+-import Login from "./page/Login";
++import Login from "./pages/Login.jsx";
+ import Dashboard from './pages/Dashboard'
++import Corso from "./pages/Corso.jsx";
+ 
+ const router = createBrowserRouter([
+-    {path: '/header', element: <Header />},
+     {path: '/', element: <Home /> },
+     {path: '/login', element: <Login />},
+-    {path: '/Dashboard', element: <Dashboard /> }
++    {path: '/Dashboard', element: <Dashboard /> },
++    {path: '/corso/:corsoName', element: <Corso />}
+ ])
+ 
+ function App() {
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"747f8f86-74b4-46cc-86c4-6c2f2bf05b0e\" name=\"Changes\" comment=\"Second commit\">\r\n      <change afterPath=\"$PROJECT_DIR$/project-app/src/pages/Dashboard.jsx\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/project-app/src/App.jsx\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/project-app/src/App.jsx\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;YannicRamser&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/YannicRamser/project-app.git&quot;,\r\n    &quot;accountId&quot;: &quot;383babac-cdab-4b3b-9798-b51c510ff90e&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;customColor&quot;: &quot;&quot;,\r\n  &quot;associatedIndex&quot;: 5\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2v7HbHmvhH4QvyXQZpH7tjccxKz\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"git-widget-placeholder\": \"master\",\r\n    \"ignore.virus.scanning.warn.message\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/yanni/OneDrive - edu.ti.ch/CPT Locarno/2. anno/IA/Modulo 294/04 App/project-app\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"ts.external.directory.path\": \"C:\\\\Users\\\\barcella\\\\AppData\\\\Local\\\\Programs\\\\WebStorm\\\\plugins\\\\javascript-plugin\\\\jsLanguageServicesImpl\\\\external\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-WS-243.26053.12\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"747f8f86-74b4-46cc-86c4-6c2f2bf05b0e\" name=\"Changes\" comment=\"\" />\r\n      <created>1743489263221</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1743489263221</updated>\r\n      <workItem from=\"1743489264803\" duration=\"521000\" />\r\n      <workItem from=\"1743490002304\" duration=\"4214000\" />\r\n      <workItem from=\"1743496291769\" duration=\"5243000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Second commit\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Second commit\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 7c94ee113072367b3503ba2c9bc1b1645b99be2f)
++++ b/.idea/workspace.xml	(date 1743578696131)
+@@ -4,17 +4,44 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="747f8f86-74b4-46cc-86c4-6c2f2bf05b0e" name="Changes" comment="Second commit">
+-      <change afterPath="$PROJECT_DIR$/project-app/src/pages/Dashboard.jsx" afterDir="false" />
++    <list default="true" id="747f8f86-74b4-46cc-86c4-6c2f2bf05b0e" name="Changes" comment="Corso added">
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_04_2025_13_16__Changes_.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/project-app/src/pages/Corso.jsx" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/project-app/src/pages/Login.css" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/project-app/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/App.css" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/project-app/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/App.jsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/project-app/src/page/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/pages/Corso.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/project-app/src/page/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/pages/Login.jsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/project-app/src/pages/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/pages/Dashboard.jsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/project-app/src/pages/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/pages/Header.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/project-app/src/pages/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/pages/Header.jsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/project-app/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/project-app/src/pages/Home.jsx" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="CSS File" />
++      </list>
++    </option>
++  </component>
++  <component name="Git.Merge.Settings">
++    <option name="BRANCH" value="origin/marco" />
++  </component>
++  <component name="Git.Rebase.Settings">
++    <option name="NEW_BASE" value="yannick" />
++  </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="master" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="GitHubPullRequestSearchHistory">{
+@@ -34,6 +61,9 @@
+   &quot;associatedIndex&quot;: 5
+ }</component>
+   <component name="ProjectId" id="2v7HbHmvhH4QvyXQZpH7tjccxKz" />
++  <component name="ProjectLevelVcsManager">
++    <ConfirmationsSetting value="2" id="Add" />
++  </component>
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+@@ -42,18 +72,24 @@
+   "keyToString": {
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "RunOnceActivity.git.unshallow": "true",
+-    "git-widget-placeholder": "master",
++    "git-widget-placeholder": "yannick2",
+     "ignore.virus.scanning.warn.message": "true",
+     "last_opened_file_path": "C:/Users/yanni/OneDrive - edu.ti.ch/CPT Locarno/2. anno/IA/Modulo 294/04 App/project-app",
++    "list.type.of.created.stylesheet": "CSS",
+     "node.js.detected.package.eslint": "true",
+     "node.js.detected.package.tslint": "true",
+     "node.js.selected.package.eslint": "(autodetect)",
+     "node.js.selected.package.tslint": "(autodetect)",
+     "nodejs_package_manager_path": "npm",
+-    "ts.external.directory.path": "C:\\Users\\barcella\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
++    "ts.external.directory.path": "C:\\Users\\yanni\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+     "vue.rearranger.settings.migration": "true"
+   }
+ }]]></component>
++  <component name="RecentsManager">
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\yanni\OneDrive - edu.ti.ch\CPT Locarno\2. anno\IA\Modulo 294\04 App\project-app\src\pages" />
++    </key>
++  </component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+@@ -73,13 +109,43 @@
+       <workItem from="1743490002304" duration="4214000" />
+       <workItem from="1743496291769" duration="5243000" />
+     </task>
++    <task id="LOCAL-00001" summary="Full project">
++      <option name="closed" value="true" />
++      <created>1743506621094</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1743506621094</updated>
++    </task>
++    <task id="LOCAL-00002" summary="Corso added">
++      <option name="closed" value="true" />
++      <created>1743578629442</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1743578629442</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Second commit" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Second commit" />
++    <MESSAGE value="Full project" />
++    <MESSAGE value="Corso added" />
++    <option name="LAST_COMMIT_MESSAGE" value="Corso added" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: project-app/src/pages/Header.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import './Header.css'\r\n\r\nexport default function Header() {\r\n    return (\r\n        <>\r\n            <div id=\"header-container\">\r\n                <h1 id=\"header-title\">Ameti</h1>\r\n\r\n                <div id=\"header-icons\">\r\n                    <div id=\"header-navBar\">\r\n                        <h2 id=\"header-navIcon\">Home</h2>\r\n                        <h2 id=\"header-navIcon\">Dashboard</h2>\r\n                    </div>\r\n\r\n                    <img id=\"header-settings\" src=\"../assets/settings-icon.png\" width={40} height={40} alt=\"Settings\"/>\r\n                </div>\r\n\r\n            </div>\r\n            <div id=\"header-line\"/>\r\n        </>\r\n    )\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/project-app/src/pages/Header.jsx b/project-app/src/pages/Header.jsx
+--- a/project-app/src/pages/Header.jsx	(revision 7c94ee113072367b3503ba2c9bc1b1645b99be2f)
++++ b/project-app/src/pages/Header.jsx	(date 1743515697917)
+@@ -8,15 +8,15 @@
+ 
+                 <div id="header-icons">
+                     <div id="header-navBar">
+-                        <h2 id="header-navIcon">Home</h2>
+-                        <h2 id="header-navIcon">Dashboard</h2>
++                        <h2 id="header-navIcon"><a href="/">Home</a></h2>
++                        <h2 id="header-navIcon"><a href="/dashboard">Dashboard</a></h2>
+                     </div>
+ 
+                     <img id="header-settings" src="../assets/settings-icon.png" width={40} height={40} alt="Settings"/>
+                 </div>
+ 
+             </div>
+-            <div id="header-line"/>
++            <div className="line"/>
+         </>
+     )
+ 
+Index: project-app/src/pages/Dashboard.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>export default function Dashboard(){\r\n    return (\r\n        <div>\r\n            <h2>Dashboard</h2>\r\n        </div>\r\n        )\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/project-app/src/pages/Dashboard.jsx b/project-app/src/pages/Dashboard.jsx
+--- a/project-app/src/pages/Dashboard.jsx	(revision 7c94ee113072367b3503ba2c9bc1b1645b99be2f)
++++ b/project-app/src/pages/Dashboard.jsx	(date 1743515744479)
+@@ -1,7 +1,9 @@
+-export default function Dashboard(){
++export default function Dashboard() {
+     return (
+         <div>
+             <h2>Dashboard</h2>
++
++            <div className="line"></div>
+         </div>
+-        )
++    )
+ }
+\ No newline at end of file
+Index: project-app/src/pages/Header.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#header-container {\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n\r\n#header-title {\r\n    width: fit-content;\r\n    padding: 10px;\r\n    margin: 0;\r\n    border-right: 2px solid black;\r\n}\r\n\r\n#header-icons {\r\n    width: 100%;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: space-between;\r\n}\r\n\r\n#header-navBar {\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n\r\n#header-navIcon {\r\n    margin: auto 10px;\r\n    padding: 0;\r\n}\r\n\r\n#header-settings {\r\n    align-content: flex-end;\r\n}\r\n\r\n#header-line {\r\n    margin: 0;\r\n    border: 1px solid black;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/project-app/src/pages/Header.css b/project-app/src/pages/Header.css
+--- a/project-app/src/pages/Header.css	(revision 7c94ee113072367b3503ba2c9bc1b1645b99be2f)
++++ b/project-app/src/pages/Header.css	(date 1743515685984)
+@@ -27,11 +27,11 @@
+     padding: 0;
+ }
+ 
++#header-navIcon a {
++    text-decoration: none;
++    color: black;
++ }
++
+ #header-settings {
+     align-content: flex-end;
+ }
+-
+-#header-line {
+-    margin: 0;
+-    border: 1px solid black;
+-}
+\ No newline at end of file
+Index: project-app/src/pages/Home.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react';\r\n\r\nconst Home = () => {\r\n    return (\r\n        <div style={{ margin: '0 100px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '100px' }}>\r\n            <h2>Home</h2>\r\n            <button>Non fa ancora nulla</button>\r\n        </div>\r\n    );\r\n};\r\n\r\nexport default Home;\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/project-app/src/pages/Home.jsx b/project-app/src/pages/Home.jsx
+--- a/project-app/src/pages/Home.jsx	(revision 7c94ee113072367b3503ba2c9bc1b1645b99be2f)
++++ b/project-app/src/pages/Home.jsx	(date 1743515807510)
+@@ -2,9 +2,13 @@
+ 
+ const Home = () => {
+     return (
+-        <div style={{ margin: '0 100px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '100px' }}>
+-            <h2>Home</h2>
+-            <button>Non fa ancora nulla</button>
++        <div>
++            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
++                <h2>Home</h2>
++                <button>Non fa ancora nulla</button>
++            </div>
++
++            <div className="line"></div>
+         </div>
+     );
+ };
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_01_04_2025_13_16__Changes_.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_04_2025_13_16__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_04_2025_13_16__Changes_.xml
+new file mode 100644
+--- /dev/null	(date 1743506635492)
++++ b/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_04_2025_13_16__Changes_.xml	(date 1743506635492)
+@@ -0,0 +1,4 @@
++<changelist name="Uncommitted_changes_before_Checkout_at_01_04_2025_13_16_[Changes]" date="1743506180027" recycled="false" toDelete="true">
++  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_01_04_2025_13_16_[Changes]/shelved.patch" />
++  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 01.04.2025 13:16 [Changes]" />
++</changelist>
+\ No newline at end of file
+Index: project-app/src/pages/Corso.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/project-app/src/pages/Corso.jsx b/project-app/src/pages/Corso.jsx
+new file mode 100644
+--- /dev/null	(date 1743578028312)
++++ b/project-app/src/pages/Corso.jsx	(date 1743578028312)
+@@ -0,0 +1,26 @@
++import { useParams } from 'react-router-dom'
++import "./Corso.css"
++
++export default function Corso() {
++    const corsoName = useParams().corsoName;
++
++    // get data with name
++    // set data to corsoInfo
++    const corsoInfo = ["Corso", "Prova prova"]
++
++    return (
++        <div id="corso-container">
++            <h2>{corsoInfo[0]}, {corsoInfo[1]}</h2>
++            <div className="line"></div>
++
++            <p>Path variable: {corsoName}</p>
++
++
++            inserire il contenuto del corso qui
++
++            <div className="line"></div>
++
++            inserire i partecipanti del corso qui
++        </div>
++    )
++}
+\ No newline at end of file
+diff --git a/project-app/src/pages/Login.css b/project-app/src/pages/Login.css
+new file mode 100644

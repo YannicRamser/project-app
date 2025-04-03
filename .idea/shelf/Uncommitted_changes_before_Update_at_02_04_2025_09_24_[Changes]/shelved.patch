@@ -1,0 +1,6 @@
+diff --git a/project-app/src/page/Login.jsx b/project-app/src/pages/Login.jsx
+rename from project-app/src/page/Login.jsx
+rename to project-app/src/pages/Login.jsx
+diff --git a/project-app/src/page/Login.css b/project-app/src/pages/Corso.css
+rename from project-app/src/page/Login.css
+rename to project-app/src/pages/Corso.css
