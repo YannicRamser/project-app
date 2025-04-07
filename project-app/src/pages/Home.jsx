@@ -1,23 +1,24 @@
 import React from 'react';
-import Swr from "../Swr";
+import {useLoaderData} from "react-router-dom";
+// import {Cookies, useCookies} from "react-cookie";
 
-const infoCorsi = [
-    {
-        id: "abc123",
-        materia: "Economia",
-        description: "prova test",
-        anno: "2024-25",
-        docente: "Sciulli"
-    },
-    {
-        id: "bcd234",
-        materia: "Matematica",
-        descrizione: "prova test",
-        anno: "2024-25",
-        docente: "Giudolin"
+// const [cookies, setCookie, removeCookie] = useCookies(['userId']);
+
+export async function getInfoCorsi() {
+    // const userId = cookies("userId");
+    const data = await fetch("http://localhost:3000/api/corso/partecipante/1")
+
+    if (data.ok) {
+        return data;
+    } else {
+        return [];
     }
-]
+}
+
+
 const Home = () => {
+    let infoCorsi = useLoaderData().results;
+
     return (
         <div>
             <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
@@ -27,24 +28,21 @@ const Home = () => {
             <div className="line"></div>
 
             <div id="home-corsiList"></div>
-            {infoCorsi.map((corso, index) => (
-                <div key={index}>
-                    {/*<ListCorso materia={corso.Materia} anno={corso.Anno} docente={corso.Docente}/>*/}
+            {infoCorsi ? (infoCorsi.map((corso, index) => (
+                    <div key={index}>
+                        <div className="home-corsoContainer">
+                            <a href={`/corso/${corso.id}`}>
+                                <h2>{corso.nome}</h2>
+                            </a>
 
-                    <div className="home-corsoContainer">
-                        <a href={`/corso/${corso.id}`}>
-                            <h2>{corso.materia}</h2>
-                        </a>
-
-
-                        <p>Anno: {corso.anno}</p>
-                        <p>Docente: {corso.docente}</p>
+                            <p>Anno: {corso.anno}</p>
+                            <p>Docente: {corso.docente}</p>
+                        </div>
                     </div>
-                </div>
-            ))}
-
-            <Swr {..."all"}/>
-
+                ))
+            ) : (
+                <h1 style={{color: 'red'}}>Error nessun corso!</h1>
+            )}
         </div>
     );
 };

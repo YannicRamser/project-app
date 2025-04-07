@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "react-cookie": "^8.0.1",
     "swr": "^2.3.3"
   }
 }

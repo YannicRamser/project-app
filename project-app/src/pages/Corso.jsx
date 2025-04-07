@@ -1,41 +1,41 @@
-import {useParams} from 'react-router-dom'
+import {useLoaderData, useParams} from 'react-router-dom'
 import "./Corso.css"
 
-export default function Corso() {
-    const corsoId = useParams().corsoName;
+export async function getCorso() {
+    // const corsoId = 1;
+    const data = await ("localhost:3000/api/corso/" + 1)
 
-    const infoCorsi = [
-        {
-            id: "abc123",
-            materia: "Economia",
-            descrizione: "prova test",
-            anno: "2024-25",
-            docente: "Sciulli"
-        },
-        {
-            id: "bcd234",
-            materia: "Matematica",
-            descrizione: "prova test",
-            anno: "2024-25",
-            docente: "Giudolin"
-        }
-    ]
+    if (data.ok) {
+        return data.result;
+    } else {
+        return null;
+    }
+}
+
+export default function Corso() {
 
     // get data with name
     // set data to corsoInfo
-    const corsoInfo = infoCorsi.find(corso => corso.id === corsoId)
+    const corsoId = parseInt(useParams().corsoId);
+    console.log("corsoId " + corsoId);
+    const corsoInfo = useLoaderData().results.filter(checkId)[0];
+    console.log(corsoInfo);
+
+    function checkId(corso) {
+        return corso.id === corsoId;
+    }
 
     return (
         <div id="corso-container">
-
-
             {corsoInfo ? (
                 <>
-                    <h2>{corsoInfo.materia}, {corsoInfo.descrizione}</h2>
+                    <h2>{corsoInfo.nome}, {corsoInfo.descrizione}</h2>
                     <div className="line"></div>
 
                     <p>Docente: {corsoInfo.docente}</p>
                     <p>Anno: {corsoInfo.anno}</p>
+
+
 
 
                     inserire il contenuto del corso qui
