@@ -14,7 +14,19 @@ export default function Header() {
                         <h2 id="header-navIcon"><a href="/dashboard">Dashboard</a></h2>
                     </div>
 
-                    <img id="header-settings" src="/settings-icon.png" width={40} height={40} alt="Settings"/>
+                    <img
+                        id="header-settings"
+                        src="/settings-icon.png"
+                        width={40}
+                        height={40}
+                        alt="Settings"
+                        onClick={() => {
+                            const exit = window.confirm("Vuoi uscire dal sito?");
+                            if (exit) {
+                                window.location.href = "/login";
+                            }
+                        }}
+                    />
                 </div>
 
             </div>

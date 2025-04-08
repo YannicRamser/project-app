@@ -8,6 +8,7 @@ function checkLogin(username, password) {
     if (res.ok) {
         if (res.success === true) {
             //settare il cookie qui
+            const userId = cookies.set('userId', );
             return true;
         } else {
             return false;
