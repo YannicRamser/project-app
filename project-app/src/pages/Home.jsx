@@ -1,14 +1,18 @@
 import React from 'react';
 import {useLoaderData} from "react-router-dom";
-// import {Cookies, useCookies} from "react-cookie";
+import { Cookies, useCookies } from "react-cookie";
 
-// const [cookies, setCookie, removeCookie] = useCookies(['userId']);
+
+ const [cookies, setCookie, removeCookie] = useCookies(['userId']);
 
 export async function getCorsi() {
     // const userId = cookies.get(corsoId);
+    const cookies = new Cookies();
+    const userId = cookies.get('userId');
+
 
     const [corsi] = await Promise.all([
-        fetch("http://localhost:3000/api/corso/partecipante/1").then(res => res.json())
+        fetch(`http://localhost:3000/api/corso/partecipante/${userId}`).then(res => res.json())
     ])
 
     return {corsi}
