@@ -1,0 +1,13 @@
+Index: project-app/src/Swr.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import useSWR from \"swr\";\r\n\r\nexport default function Swr(dataSource) {\r\n\r\n    const fetcher = (...args) => fetch(...args).then((res) => res.json());\r\n    // const link = \"localhost:3000/api/\" + dataSource;\r\n    const link = \"https://restcountries.com/v2/\" + dataSource;\r\n\r\n\r\n    const Swr = () => {\r\n        const {\r\n            data: countries,\r\n            error,\r\n            isValidating,\r\n        } = useSWR(link, fetcher);\r\n\r\n        // Handles error and loading state\r\n        if (error) return <div className='failed'>failed to load</div>;\r\n        if (isValidating) return <div className=\"Loading\">Loading...</div>;\r\n\r\n        return (\r\n            <div>\r\n                {countries &&\r\n                    countries.map((country, index) => (\r\n                        <img key={index} src={country.flags.png} alt='flag' width={100} />\r\n                    ))}\r\n            </div>\r\n        );\r\n    };\r\n}
+===================================================================
+diff --git a/project-app/src/Swr.jsx b/project-app/src/Swr.jsx
+--- a/project-app/src/Swr.jsx	(revision a154c4245e3d6df953eb14cbc1e211c939ff55f6)
++++ b/project-app/src/Swr.jsx	(date 1744018695374)
+@@ -1,3 +1,4 @@
++
+ import useSWR from "swr";
+ 
+ export default function Swr(dataSource) {
