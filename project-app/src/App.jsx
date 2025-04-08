@@ -6,11 +6,10 @@ import Home from './pages/Home';
 import Login from "./pages/Login";
 import Dashboard from './pages/Dashboard'
 import Corso, {loader} from "./pages/Corso.jsx";
-import {getInfo} from "./functions/InfoFunction.jsx";
 
 
 const router = createBrowserRouter([
-    {path: '/', element: <Home />, loader: getInfo },
+    {path: '/', element: <Home />, loader: loader },
     {path: '/login', element: <Login />},
     {path: '/Dashboard', element: <Dashboard /> },
     {path: '/corso/:corsoId', element: <Corso />, loader: loader }

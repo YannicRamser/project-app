@@ -25,8 +25,9 @@ db.connect((err) => {
 });
 
 // Cerca user da username e password
-app.get("/api/login", (req, res) => {
-    const { username, password } = req.query;
+app.get("/api/login/:username/:password", (req, res) => {
+    const username = req.params.username;
+    const password = req.params.password;
 
     if (!username || !password) {
         return res.status(400).json({ success: false, id: null });

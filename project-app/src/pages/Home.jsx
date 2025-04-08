@@ -4,9 +4,19 @@ import {useLoaderData} from "react-router-dom";
 
 // const [cookies, setCookie, removeCookie] = useCookies(['userId']);
 
+export async function getCorsi() {
+    // const userId = cookies.get(corsoId);
+
+    const [corsi] = await Promise.all([
+        fetch("http://localhost:3000/api/corso/partecipante/1").then(res => res.json())
+    ])
+
+    return {corsi}
+}
+
 
 const Home = () => {
-    let infoCorsi = useLoaderData().results;
+    let infoCorsi = useLoaderData().corsi.results;
 
     return (
         <div>

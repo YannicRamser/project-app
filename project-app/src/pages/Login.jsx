@@ -1,6 +1,19 @@
 import React from 'react';
 import './Login.css';
 import {useNavigate } from 'react-router-dom';
+import res from "assert";
+
+function checkLogin(username, password) {
+    fetch("http://localhost:3000/api/login/" + username + "/" + password).then(res => res.json())
+    if (res.ok) {
+        if (res.success === true) {
+            //settare il cookie qui
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
 
 const Login = () => {
 const navigate = useNavigate();
@@ -25,11 +38,12 @@ const navigate = useNavigate();
                 </div>
                 <div className="login-button-container">
                     <p id="Risposta"> </p>
-                    <button onClick={(pswd, username) => {
+                    <button onClick={(pswd, user) => {
 
-                        username = document.querySelector("#input-username").value;
+                        user = document.querySelector("#input-username").value;
                         pswd = document.querySelector("#input-password").value;
-                        if (pswd === "1234" && username === "username") {
+
+                        if (checkLogin(user, pswd)) {
                             navigate("/");
                         } else {
                             let text = "Username o password sono errati";
