@@ -50,6 +50,26 @@ app.get("/api/login/:username/:password", (req, res) => {
     });
 });
 
+// Aggiungi un nuovo compito
+app.post("/api/compito/add", (req, res) => {
+    const { nome, descrizione, deadline, corso_id } = req.body;
+
+    if (!nome || !descrizione || !deadline || !corso_id) {
+        return res.status(400).json({ success: false, message: "Dati mancanti" });
+    }
+
+    const query = "INSERT INTO compiti (nome, descrizione, deadline, corso_id) VALUES (?, ?, ?, ?)";
+    db.query(query, [nome, descrizione, deadline, corso_id], (err, result) => {
+        if (err) {
+            console.error("Errore durante l'inserimento del compito:", err);
+            return res.status(500).json({ success: false, message: "Errore del server" });
+        }
+
+        res.status(201).json({ success: true, message: "Compito aggiunto con successo", compitoId: result.insertId });
+    });
+});
+
+
 // Cerca corso in base a id
 app.get("/api/corso/:id", (req, res) => {
     const corsoId = req.params.id;
