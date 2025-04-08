@@ -1,12 +1,14 @@
 import {useLoaderData, useParams} from 'react-router-dom'
 import "./Corso.css"
+import {Cookies} from "react-cookie";
 
 export async function loader(/**{params}*/) {
     // const corsoId = params.corsoId;
-    // const userId = cookies.get(corsoId);
+    const cookies = new Cookies();
+    const userId = cookies.get("userId");
 
     const [corsi, user] = await Promise.all([
-        fetch("http://localhost:3000/api/corso/partecipante/1").then(res => res.json()),
+        fetch(`http://localhost:3000/api/corso/partecipante/${userId}`).then(res => res.json()),
         fetch("http://localhost:3000/api/utenti").then(res => res.json())
     ])
 

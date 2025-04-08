@@ -36,7 +36,7 @@ app.get("/api/login/:username/:password", (req, res) => {
     const query = "SELECT id FROM utenti WHERE username = ? AND password = ? LIMIT 1";
     db.query(query, [username, password], (err, results) => {
         if (err) {
-            return res.status(500).json({ success: false, id: null });
+            return res.json({ success: false, id: null });
         }
 
         if (results.length > 0) {
@@ -45,7 +45,7 @@ app.get("/api/login/:username/:password", (req, res) => {
                 id: results[0].id
             });
         } else {
-            return res.status(401).json({ success: false, id: null });
+            return res.json({ success: false, id: null });
         }
     });
 });
