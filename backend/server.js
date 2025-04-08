@@ -12,7 +12,7 @@ app.use(express.json());
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "root",
+    password: "1234",
     database: "project_app"
 });
 
@@ -29,35 +29,27 @@ app.get("/api/login", (req, res) => {
     const { username, password } = req.query;
 
     if (!username || !password) {
-        return res.status(400).json({ success: false, id: null, message: "Username e password richiesti" });
+        return res.status(400).json({ success: false, id: null });
     }
 
-    // Controllo nella tabella Studenti
-    const queryStudente = "SELECT id FROM studenti WHERE username = ? AND password = ? LIMIT 1";
-    db.query(queryStudente, [username, password], (err, results) => {
+    const query = "SELECT id FROM utenti WHERE username = ? AND password = ? LIMIT 1";
+    db.query(query, [username, password], (err, results) => {
         if (err) {
-            return res.status(500).json({ success: false, id: null, error: err.message });
+            return res.status(500).json({ success: false, id: null });
         }
 
         if (results.length > 0) {
-            return res.json({ success: true, id: results[0].id});
+            return res.json({
+                success: true,
+                id: results[0].id
+            });
+        } else {
+            return res.status(401).json({ success: false, id: null });
         }
-
-        // Se non trovato in studenti, cerca nei docenti
-        const queryDocente = "SELECT id FROM docenti WHERE username = ? AND password = ? LIMIT 1";
-        db.query(queryDocente, [username, password], (err2, results2) => {
-            if (err2) {
-                return res.status(500).json({ success: false, id: null, error: err2.message });
-            }
-
-            if (results2.length > 0) {
-                return res.json({ success: true, id: results2[0].id, ruolo: "docente" });
-            } else {
-                return res.status(401).json({ success: false, id: null, message: "Credenziali non valide" });
-            }
-        });
     });
 });
+
+
 
 // Cerca corso in base a id
 app.get("/api/corso/:id", (req, res) => {
