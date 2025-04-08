@@ -10,10 +10,10 @@ app.use(express.json());
 
 // Connessione al database
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "1234",
-    database: "project_app"
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME
 });
 
 db.connect((err) => {
@@ -48,8 +48,6 @@ app.get("/api/login", (req, res) => {
         }
     });
 });
-
-
 
 // Cerca corso in base a id
 app.get("/api/corso/:id", (req, res) => {
