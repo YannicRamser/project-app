@@ -10,10 +10,10 @@ app.use(express.json());
 
 // Connessione al database
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "root",
-    database: "project_app"
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME
 });
 
 db.connect((err) => {
@@ -75,9 +75,24 @@ app.get("/api/corso/:id", (req, res) => {
     });
 });
 
-
 app.get("/api/corso/partecipante/:userId", (req, res) => {
     const userId = `%${req.params.userId}%`; // Correct way to include wildcard
+
+    const queryCorso = "SELECT * FROM corsi WHERE partecipanti LIKE ? OR docente = ?"; // Assuming 'docente' stores user ID directly
+    db.query(queryCorso, [userId, req.params.userId], (err, results) => {
+        if (err) {
+            return res.status(500).json({ success: false, id: null, error: err.message });
+        }
+        if (results.length === 0) {
+            return res.status(404).json({ error: "Corso non trovato" });
+        }
+
+        res.json({ results });
+    });
+});
+
+app.get("/api/utente/:ruolo", (req, res) => {
+    const userId = req.params.id; // Correct way to include wildcard
 
     const queryCorso = "SELECT * FROM corsi WHERE partecipanti LIKE ? OR docente = ?"; // Assuming 'docente' stores user ID directly
     db.query(queryCorso, [userId, req.params.userId], (err, results) => {
