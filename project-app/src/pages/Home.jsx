@@ -4,17 +4,6 @@ import {useLoaderData} from "react-router-dom";
 
 // const [cookies, setCookie, removeCookie] = useCookies(['userId']);
 
-export async function getInfoCorsi() {
-    // const userId = cookies("userId");
-    const data = await fetch("http://localhost:3000/api/corso/partecipante/1")
-
-    if (data.ok) {
-        return data;
-    } else {
-        return [];
-    }
-}
-
 
 const Home = () => {
     let infoCorsi = useLoaderData().results;

@@ -77,9 +77,9 @@ app.get("/api/corso/:id", (req, res) => {
 
 
 app.get("/api/corso/partecipante/:userId", (req, res) => {
-    const userId = `%${req.params.userId}%`; // Correct way to include wildcard
+    const userId = `%${req.params.userId}%`;
 
-    const queryCorso = "SELECT * FROM corsi WHERE partecipanti LIKE ? OR docente = ?"; // Assuming 'docente' stores user ID directly
+    const queryCorso = "SELECT * FROM corsi WHERE partecipanti LIKE ? OR docente = ?";
     db.query(queryCorso, [userId, req.params.userId], (err, results) => {
         if (err) {
             return res.status(500).json({ success: false, id: null, error: err.message });
@@ -91,6 +91,38 @@ app.get("/api/corso/partecipante/:userId", (req, res) => {
         res.json({ results });
     });
 });
+
+app.get("/api/utenti", (req, res) => {
+    const userId = req.params.userId;
+
+    const query = "SELECT nome, cognome FROM utenti";
+    db.query(query, [userId], (err, results) => {
+        if (err) {
+            return res.status(500).json({ success: false, id: null, error: err.message });
+        }
+        if (results.length === 0) {
+            return res.status(404).json({ error: "Corso non trovato" });
+        }
+
+        res.json({ results });
+    })
+})
+
+app.get("/api/partecipante/:userId", (req, res) => {
+    const userId = req.params.userId;
+
+    const query = "SELECT nome, cognome FROM partecipante WHERE id = ?";
+    db.query(query, [userId], (err, results) => {
+        if (err) {
+            return res.status(500).json({ success: false, id: null, error: err.message });
+        }
+        if (results.length === 0) {
+            return res.status(404).json({ error: "Corso non trovato" });
+        }
+
+        res.json({ results });
+    })
+})
 
 // Avvia il server
 const PORT = 3000;

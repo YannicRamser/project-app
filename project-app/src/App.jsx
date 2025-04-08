@@ -2,17 +2,18 @@ import {BrowserRouter, RouterProvider} from "react-router-dom";
 import './App.css'
 import Header from './pages/Header'
 import {createBrowserRouter} from "react-router-dom";
-import Home, {getInfoCorsi} from './pages/Home';
+import Home from './pages/Home';
 import Login from "./pages/Login";
 import Dashboard from './pages/Dashboard'
-import Corso from "./pages/Corso.jsx";
+import Corso, {loader} from "./pages/Corso.jsx";
+import {getInfo} from "./functions/InfoFunction.jsx";
 
 
 const router = createBrowserRouter([
-    {path: '/', element: <Home />, loader: getInfoCorsi },
+    {path: '/', element: <Home />, loader: getInfo },
     {path: '/login', element: <Login />},
     {path: '/Dashboard', element: <Dashboard /> },
-    {path: '/corso/:corsoId', element: <Corso />, loader: getInfoCorsi }
+    {path: '/corso/:corsoId', element: <Corso />, loader: loader }
 ])
 
 function App() {
