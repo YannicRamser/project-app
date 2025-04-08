@@ -1,31 +1,23 @@
 import React from 'react';
 import './Login.css';
-import {useNavigate} from 'react-router-dom';
-import {Cookies} from "react-cookie";
+import {useNavigate } from 'react-router-dom';
+import res from "assert";
 
-async function checkLogin(username, password) {
-    return await fetch("http://localhost:3000/api/login/" + username + "/" + password)
-        .then(res => {
-            if (!res.ok) {
-                return false
-            }
-            return res.json()
-        })
-        .then(data => {
-            if (data.success) {
-                console.log("login success", data);
-                const cookies = new Cookies();
-                cookies.set('userId', data.id);
-                return true
-            } else {
-                console.log("login error", data);
-                return false;
-            }
-        })
+function checkLogin(username, password) {
+    fetch("http://localhost:3000/api/login/" + username + "/" + password).then(res => res.json())
+    if (res.ok) {
+        if (res.success === true) {
+            //settare il cookie qui
+            const userId = cookies.set('userId', );
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
 const Login = () => {
-    const navigate = useNavigate();
+const navigate = useNavigate();
     return (
 
         <div className="login-container">
@@ -46,27 +38,24 @@ const Login = () => {
 
                 </div>
                 <div className="login-button-container">
-                    <p id="Risposta"></p>
-                    <button onClick={async (pswd, user) => {
+                    <p id="Risposta"> </p>
+                    <button onClick={(pswd, user) => {
 
                         user = document.querySelector("#input-username").value;
                         pswd = document.querySelector("#input-password").value;
 
-                        await checkLogin(user, pswd).then(res => {
-                            if (res) {
-                                navigate("/");
-                            } else {
-                                let text = "Username o password sono errati";
-                                document.getElementById("Risposta").innerHTML = text;
-                            }
-                        })
-
-
+                        if (checkLogin(user, pswd)) {
+                            navigate("/");
+                        } else {
+                            let text = "Username o password sono errati";
+                            document.getElementById("Risposta").innerHTML = text;
+                        }
                     }}>Login
                     </button>
 
                 </div>
             </div>
-        </div>);
+        </div>
+    );
 };
 export default Login;
