@@ -1,11 +1,14 @@
 import './Header.css'
+import {Cookies} from "react-cookie";
+
+const cookies = new Cookies();
 
 export default function Header() {
     return (
         <>
             <div id="header-container">
                 <a href="/" id="header-logo-link">
-                    <img src="/Ameti_Logo_sfumature.png" alt="Ameti" id="header-title" />
+                    <img src="/Ameti_Logo_sfumature.png" alt="Ameti" id="header-title"/>
                 </a>
 
                 <div id="header-icons">
@@ -14,7 +17,26 @@ export default function Header() {
                         <h2 id="header-navIcon"><a href="/dashboard">Dashboard</a></h2>
                     </div>
 
-                    <img id="header-settings" src="/settings-icon.png" width={40} height={40} alt="Settings"/>
+                    {cookies.get("userId") ? (
+                        <img
+                            id="header-settings"
+                            src="/settings-icon.png"
+                            width={40}
+                            height={40}
+                            alt="Settings"
+                            onClick={() => {
+                                const exit = window.confirm("Vuoi uscire dal sito?");
+                                if (exit) {
+                                    cookies.remove("userId");
+                                    window.location.href = "/login";
+                                }
+                            }}
+                        />
+                    ) : (
+                        <a href="/login" style={{color: 'black'}}>
+                            <h2 style={{marginRight: 20}}>Login</h2>
+                        </a>
+                    )}
                 </div>
 
             </div>

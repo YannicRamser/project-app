@@ -83,11 +83,9 @@ app.get("/api/corso/partecipante/:userId", (req, res) => {
     });
 });
 
-app.get("/api/utenti", (req, res) => {
-    const userId = req.params.userId;
-
-    const query = "SELECT nome, cognome FROM utenti";
-    db.query(query, [userId], (err, results) => {
+app.get("/api/users", (req, res) => {
+    const query = "SELECT id, nome, cognome FROM utenti";
+    db.query(query, (err, results) => {
         if (err) {
             return res.status(500).json({ success: false, id: null, error: err.message });
         }
@@ -99,13 +97,46 @@ app.get("/api/utenti", (req, res) => {
     })
 })
 
-app.get("/api/partecipante/:userId", (req, res) => {
+app.get("/api/user/corso/:corsoId", (req, res) => {
+    const corsoId = req.params.corsoId;
+
+    const query = "SELECT partecipanti FROM corsi WHERE id = ?";
+    db.query(query, [corsoId], (err, results) => {
+        if (err) {
+            // return res.status(500).json({ success: false, id: null, error: err.message });
+            return "prova"
+        }
+        if (results.length === 0) {
+            return "Corso non trovato";
+        }
+
+        const array = JSON.parse(results[0].partecipanti);
+        const userArray = []
+
+        for (const userId of array) {
+            const query = "SELECT nome, cognome FROM utenti WHERE id = ?";
+            db.query(query, [userId], (err, user) => {
+                if (err) {
+                    return "error"
+                }
+                if (user.length === 0) {
+                    return res.status(404).json({ error: "Corso non trovato" });
+                }
+                userArray.push(user);
+            })
+        }
+
+        return res.json({ userArray });
+    })
+})
+
+app.get("/api/user/:userId", (req, res) => {
     const userId = req.params.userId;
 
-    const query = "SELECT nome, cognome FROM partecipante WHERE id = ?";
+    const query = "SELECT nome, cognome FROM utenti WHERE id = ?";
     db.query(query, [userId], (err, results) => {
         if (err) {
-            return res.status(500).json({ success: false, id: null, error: err.message });
+            return "error"
         }
         if (results.length === 0) {
             return res.status(404).json({ error: "Corso non trovato" });
