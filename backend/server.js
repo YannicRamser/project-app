@@ -115,6 +115,22 @@ app.get("/api/partecipante/:userId", (req, res) => {
     })
 })
 
+// ritorna ruolo utente da id
+app.get("/api/user/role/:userId", (req, res) => {
+    const userId = req.params.userId;
+
+    const query = "SELECT ruolo FROM utenti WHERE id = ? LIMIT 1";
+    db.query(query, [userId], (err, results) => {
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
+        if (results.length === 0) {
+            return res.status(404).json({ message: "Utente non trovato" });
+        }
+        res.json({ ruolo: results[0].ruolo });
+    });
+});
+
 // Avvia il server
 const PORT = 3000;
 app.listen(PORT, () => {
