@@ -1,5 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import Select from "react-select";
+import AddingCompito from "./AddingCompito.jsx";
+import AddingFile from "./AddingFile.jsx";
+import AddingTest from "./AddingTest.jsx";
+import AddingFlashcards from "./AddingFlashcards.jsx";
 
 export default function AddingHome() {
 
@@ -10,9 +14,25 @@ export default function AddingHome() {
         {value: 'flashcards', label: 'Flashcards'},
     ]
 
+    const [selectedValue, setSelectedValue] = useState(null);
+
+    const handleChange = (selectedOption) => {
+        setSelectedValue(selectedOption);
+    };
+
     return (
         <>
-            <Select options={options} placeholder="Aggungi..."/>
-        </>
+            <Select
+                value={selectedValue}
+                onChange={handleChange}
+                options={options}
+                placeholder="Agguingi..."
+            />
+
+            {selectedValue && selectedValue.value === "compito" ? <AddingCompito /> : null}
+            {selectedValue && selectedValue.value === "file" ? <AddingFile /> : null}
+            {selectedValue && selectedValue.value === "test" ? <AddingTest /> : null}
+            {selectedValue && selectedValue.value === "flashcards" ? <AddingFlashcards /> : null}
+        < />
     )
 }
