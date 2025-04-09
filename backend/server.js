@@ -2,7 +2,6 @@ import { config } from "dotenv";
 import express from "express";
 import mysql from "mysql2";
 import cors from "cors";
-import {resolve} from "node:dns";
 
 config();
 const app = express();
@@ -15,18 +14,10 @@ const db = mysql.createConnection({
     user: process.env.DB_USER,
     password: process.env.DB_PASS,
     database: process.env.DB_NAME
-});
-
-db.connect((err) => {
-    if (err) {
-        console.error("Errore di connessione al DB:", err);
-        return;
-    }
-    console.log("Connesso a MySQL");
-});
+}).promise();
 
 // Cerca user da username e password
-app.get("/api/login/:username/:password", (req, res) => {
+app.get("/api/login/:username/:password", async (req, res) => {
     const username = req.params.username;
     const password = req.params.password;
 
@@ -35,156 +26,123 @@ app.get("/api/login/:username/:password", (req, res) => {
     }
 
     const query = "SELECT id FROM utenti WHERE username = ? AND password = ? LIMIT 1";
-    db.query(query, [username, password], (err, results) => {
-        if (err) {
-            return res.json({ success: false, id: null });
-        }
+    try{
+        const [results] = await db.query(query, [username, password])
 
-        if (results.length > 0) {
-            return res.json({
-                success: true,
-                id: results[0].id
-            });
-        } else {
-            return res.json({ success: false, id: null });
-        }
-    });
-});
-
-// Aggiungi un nuovo compito
-app.post("/api/compito/add", (req, res) => {
-    const { nome, descrizione, deadline, corso_id } = req.body;
-
-    if (!nome || !descrizione || !deadline || !corso_id) {
-        return res.status(400).json({ success: false, message: "Dati mancanti" });
+        return res.json({
+            success: true,
+            id: results[0].id
+        });
+    } catch (err){
+        return res.json({ success: false, id: null });
     }
-
-    const query = "INSERT INTO compiti (nome, descrizione, deadline, corso_id) VALUES (?, ?, ?, ?)";
-    db.query(query, [nome, descrizione, deadline, corso_id], (err, result) => {
-        if (err) {
-            console.error("Errore durante l'inserimento del compito:", err);
-            return res.status(500).json({ success: false, message: "Errore del server" });
-        }
-
-        res.status(201).json({ success: true, message: "Compito aggiunto con successo", compitoId: result.insertId });
-    });
 });
-
 
 // Cerca corso in base a id
-app.get("/api/corso/:id", (req, res) => {
+app.get("/api/corso/:id", async (req, res) => {
     const corsoId = req.params.id;
-    db.query("SELECT * FROM corsi WHERE id = ?", [corsoId], (err, results) => {
-        if (err) {
-            res.status(500).json({ error: err.message });
-            return;
-        }
+
+    try{
+        const [results] = await db.query("SELECT * FROM corsi WHERE id = ?", [corsoId])
         if (results.length === 0) {
             res.status(404).json({ error: "Corso non trovato" });
             return;
         }
         res.json({ results });
-    });
+    } catch(err) {
+        res.status(500).json({ error: err.message });
+    }
 });
 
-
-app.get("/api/corso/partecipante/:userId", (req, res) => {
+app.get("/api/corso/partecipante/:userId", async (req, res) => {
     const userId = `%${req.params.userId}%`;
 
+    //Cosa fa di preciso questa query?
     const queryCorso = "SELECT * FROM corsi WHERE partecipanti LIKE ? OR docente = ?";
-    db.query(queryCorso, [userId, req.params.userId], (err, results) => {
-        if (err) {
-            return res.status(500).json({ success: false, id: null, error: err.message });
-        }
+    try{
+        const [results] = await db.query(queryCorso, [userId, req.params.userId])
         if (results.length === 0) {
             return res.status(404).json({ error: "Corso non trovato" });
         }
-
         res.json({ results });
-    });
+    }catch(err){
+        return res.status(500).json({ success: false, id: null, error: err.message });
+    }
 });
 
-app.get("/api/users", (req, res) => {
-    const query = "SELECT id, nome, cognome, ruolo FROM utenti";
-    db.query(query, (err, results) => {
-        if (err) {
-            return res.status(500).json({ success: false, id: null, error: err.message });
-        }
+app.get("/api/users", async (req, res) => {
+    const query = "SELECT id, nome, cognome FROM utenti";
+    try{
+        const [results] = await db.query(query)
         if (results.length === 0) {
             return res.status(404).json({ error: "Corso non trovato" });
         }
-
         res.json({ results });
-    })
+    } catch(err) {
+        return res.status(500).json({ success: false, id: null, error: err.message });
+    }
 })
 
-app.get("/api/user/corso/:corsoId", (req, res) => {
+app.get("/api/user/corso/:corsoId",  async (req, res) => {
     const corsoId = req.params.corsoId;
 
-    const query = "SELECT partecipanti FROM corsi WHERE id = ?";
-    db.query(query, [corsoId], (err, results) => {
-        if (err) {
-            // return res.status(500).json({ success: false, id: null, error: err.message });
-            return "prova"
-        }
-        if (results.length === 0) {
-            return "Corso non trovato";
+    try{
+        let array = []
+        let [result] = await db.query("SELECT partecipanti FROM corsi WHERE id = ?", [corsoId])
+        result = JSON.parse(result[0].partecipanti)
+
+        if(result.length === 0){
+            return res.status(404).json({error: "Corso non trovato"})
         }
 
-        const array = JSON.parse(results[0].partecipanti);
-        const userArray = []
-
-        for (const userId of array) {
+        for(let p of result){
             const query = "SELECT nome, cognome FROM utenti WHERE id = ?";
-                db.query(query, [userId], (err, user) => {
-                    if (err) {
-                        return "error"
-                    }
-                    if (user.length === 0) {
-                        return res.status(404).json({error: "Corso non trovato"});
-                    }
-                    resolve(user[0]);
-                });
+            const [res] = await db.query(query, [p])
+            console.log(res)
+            array.push(res[0])
         }
+        return res.json({ array });
 
-        return res.json({ userArray });
-    })
+    } catch(err){
+        console.error(err)
+        return res.status(404).json({error: "Corso non trovato"})
+    }
+
 })
 
-app.get("/api/user/:userId", (req, res) => {
+app.get("/api/user/:userId", async (req, res) => {
     const userId = req.params.userId;
 
-    const query = "SELECT nome, cognome FROM utenti WHERE id = ?";
-    db.query(query, [userId], (err, results) => {
-        if (err) {
-            return "error"
-        }
+    try{
+        const query = "SELECT nome, cognome FROM utenti WHERE id = ?";
+        const [results] = await db.query(query, [userId])
         if (results.length === 0) {
             return res.status(404).json({ error: "Corso non trovato" });
         }
 
-        res.json({ results });
-    })
+        res.json({ user: results[0] });
+    } catch(err){
+        return "error"
+    }
 })
 
-// ritorna ruolo utente da id
-app.get("/api/user/role/:userId", (req, res) => {
+app.get("/api/user/role/:userId", async (req, res) => {
     const userId = req.params.userId;
 
     const query = "SELECT ruolo FROM utenti WHERE id = ? LIMIT 1";
-    db.query(query, [userId], (err, results) => {
-        if (err) {
-            return res.status(500).json({ error: err.message });
-        }
+    try {
+        const [results] = await db.query(query, [userId])
         if (results.length === 0) {
             return res.status(404).json({ message: "Utente non trovato" });
         }
-        res.json({ role: results[0].ruolo });
-    });
+        res.json({ ruolo: results[0].ruolo });
+    } catch (err) {
+        return res.status(500).json({error: err.message});
+    }
 });
 
 // Avvia il server
 const PORT = 3000;
 app.listen(PORT, () => {
-    console.log('Server in ascolto su http://localhost:3000');
+    console.log('Server in ascolto su http://localhost:'+PORT);
 });
