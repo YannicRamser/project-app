@@ -1,6 +1,5 @@
 import React from 'react';
 import './Login.css';
-import {useNavigate} from 'react-router-dom';
 import {Cookies} from "react-cookie";
 
 async function checkLogin(username, password) {

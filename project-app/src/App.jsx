@@ -6,13 +6,15 @@ import Home from './pages/Home';
 import Login from "./pages/Login";
 import Dashboard from './pages/Dashboard'
 import Corso, {loader} from "./pages/Corso.jsx";
+import AddingHome from "./pages/addingPages/AddingHome.jsx";
 
 
 const router = createBrowserRouter([
     {path: '/', element: <Home />, loader: loader },
     {path: '/login', element: <Login />},
     {path: '/Dashboard', element: <Dashboard /> },
-    {path: '/corso/:corsoId', element: <Corso />, loader: loader }
+    {path: '/corso/:corsoId', element: <Corso />, loader: loader },
+    {path: '/adding', element: <AddingHome />}
 ])
 
 function App() {
