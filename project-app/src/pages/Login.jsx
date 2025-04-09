@@ -1,23 +1,22 @@
 import React from 'react';
 import './Login.css';
-import {useNavigate } from 'react-router-dom';
-import res from "assert";
+import {useNavigate} from 'react-router-dom';
+import {Cookies} from "react-cookie";
 
-function checkLogin(username, password) {
-    fetch("http://localhost:3000/api/login/" + username + "/" + password).then(res => res.json())
-    if (res.ok) {
-        if (res.success === true) {
-            //settare il cookie qui
-            const userId = cookies.set('userId', );
-            return true;
-        } else {
-            return false;
-        }
+async function checkLogin(username, password) {
+    const response = await fetch("http://localhost:3000/api/login/" + username + "/" + password)
+        .then(res => res.json())
+
+    console.log(response.success);
+    if (response.success === true) {
+        const cookies = new Cookies();
+        cookies.set('userId', response.id);
+        return true;
     }
+    return false;
 }
 
 const Login = () => {
-const navigate = useNavigate();
     return (
 
         <div className="login-container">
@@ -38,14 +37,14 @@ const navigate = useNavigate();
 
                 </div>
                 <div className="login-button-container">
-                    <p id="Risposta"> </p>
-                    <button onClick={(pswd, user) => {
+                    <p id="Risposta"></p>
+                    <button onClick={(user, pswd) => {
 
                         user = document.querySelector("#input-username").value;
                         pswd = document.querySelector("#input-password").value;
 
                         if (checkLogin(user, pswd)) {
-                            navigate("/");
+                            window.location.href = "/";
                         } else {
                             let text = "Username o password sono errati";
                             document.getElementById("Risposta").innerHTML = text;

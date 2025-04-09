@@ -17,7 +17,7 @@ export default function Header() {
                         <h2 id="header-navIcon"><a href="/dashboard">Dashboard</a></h2>
                     </div>
 
-                    {cookies.get("userId") ? (
+                    {cookies.get("userId") !== null ? (
                         <img
                             id="header-settings"
                             src="/settings-icon.png"
@@ -27,7 +27,7 @@ export default function Header() {
                             onClick={() => {
                                 const exit = window.confirm("Vuoi uscire dal sito?");
                                 if (exit) {
-                                    cookies.remove("userId");
+                                    cookies.set("userId", null);
                                     window.location.href = "/login";
                                 }
                             }}

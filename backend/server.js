@@ -2,6 +2,7 @@ import { config } from "dotenv";
 import express from "express";
 import mysql from "mysql2";
 import cors from "cors";
+import {resolve} from "node:dns";
 
 config();
 const app = express();
@@ -104,7 +105,7 @@ app.get("/api/corso/partecipante/:userId", (req, res) => {
 });
 
 app.get("/api/users", (req, res) => {
-    const query = "SELECT id, nome, cognome FROM utenti";
+    const query = "SELECT id, nome, cognome, ruolo FROM utenti";
     db.query(query, (err, results) => {
         if (err) {
             return res.status(500).json({ success: false, id: null, error: err.message });
@@ -135,15 +136,15 @@ app.get("/api/user/corso/:corsoId", (req, res) => {
 
         for (const userId of array) {
             const query = "SELECT nome, cognome FROM utenti WHERE id = ?";
-            db.query(query, [userId], (err, user) => {
-                if (err) {
-                    return "error"
-                }
-                if (user.length === 0) {
-                    return res.status(404).json({ error: "Corso non trovato" });
-                }
-                userArray.push(user);
-            })
+                db.query(query, [userId], (err, user) => {
+                    if (err) {
+                        return "error"
+                    }
+                    if (user.length === 0) {
+                        return res.status(404).json({error: "Corso non trovato"});
+                    }
+                    resolve(user[0]);
+                });
         }
 
         return res.json({ userArray });
@@ -178,7 +179,7 @@ app.get("/api/user/role/:userId", (req, res) => {
         if (results.length === 0) {
             return res.status(404).json({ message: "Utente non trovato" });
         }
-        res.json({ ruolo: results[0].ruolo });
+        res.json({ role: results[0].ruolo });
     });
 });
 

@@ -1,25 +1,27 @@
 import React from 'react';
 import {useLoaderData} from "react-router-dom";
-import {Cookies, useCookies} from "react-cookie";
-
-export async function getCorsi() {
-    // const userId = cookies.get(corsoId);
-    const cookies = new Cookies();
-    const userId = cookies.get('userId');
+import {Cookies} from "react-cookie";
 
 
-    const [corsi] = await Promise.all([
-        fetch(`http://localhost:3000/api/corso/partecipante/${userId}`).then(res => res.json())
-    ])
-
-    return {corsi}
-}
-function getRole() {
-    return "docente"
-}
-
-const Home = () => {
+export default function Home() {
     let infoCorsi = useLoaderData().corsi.results;
+
+    const cookies = new Cookies();
+    const userId = parseInt(cookies.get("userId"));
+
+    if (cookies.get("userId") === null) {
+        window.location.href = "/login";
+    }
+
+    function getRole() {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        return useLoaderData().user.results.filter(user => user.id === userId)[0].ruolo
+    }
+
+    function getDocente(id) {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        return useLoaderData().user.results.filter(user => user.id === id)[0]
+    }
 
     return (
         <div>
@@ -41,7 +43,7 @@ const Home = () => {
                 </a>
 
                 <p>Anno: {corso.anno}</p>
-                <p>Docente: {corso.docente}</p>
+                <p>Docente: {getDocente(corso.docente).nome} {getDocente(corso.docente).cognome}</p>
             </div>
         </div>
     )
@@ -55,5 +57,3 @@ const Home = () => {
 )
     ;
 };
-
-export default Home;

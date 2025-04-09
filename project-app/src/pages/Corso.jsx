@@ -7,6 +7,10 @@ export async function loader() {
     const cookies = new Cookies();
     const userId = cookies.get("userId");
 
+    if (cookies.get("userId") === null) {
+        window.location.href = "/login";
+    }
+
     const [corsi, user] = await Promise.all([
         fetch(`http://localhost:3000/api/corso/partecipante/${userId}`).then(res => res.json()),
         fetch("http://localhost:3000/api/users").then(res => res.json())
@@ -18,28 +22,30 @@ export async function loader() {
 export default function Corso() {
     const corsoId = parseInt(useParams().corsoId)
 
-    console.log(useLoaderData())
+    const cookies = new Cookies();
+    const userId = cookies.get("userId");
+    const userRole = useLoaderData().user.results.filter(user => user.id === userId)[0].ruolo
 
     const corsoInfo = useLoaderData().corsi.results.filter(checkId)[0]
     const docente = useLoaderData().user.results.filter(user => user.id === corsoInfo.docente)[0];
-
-    console.log(docente)
-    console.log(corsoInfo)
+    const corsoUsers = JSON.parse(corsoInfo.partecipanti);
 
     function checkId(corso) {
         return corso.id === corsoId;
     }
 
-    function getRole() {
-        return "docente";
+    function getUser(id) {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        return useLoaderData().user.results.filter(user => user.id === id)[0]
     }
+
     return (
         <div id="corso-container">
             {corsoInfo ? (
                 <>
                     <h2>{corsoInfo.nome}, {corsoInfo.descrizione}</h2>
                     <h2>Home</h2>
-                    {getRole() === "docente" ? (
+                    {userRole === "docente" ? (
                         <button>Non fa ancora nulla</button>
                     ) : null}
                     <div className="line"></div>
@@ -50,6 +56,14 @@ export default function Corso() {
                     inserire il contenuto del corso qui
 
                     <div className="line"></div>
+                    <h3>Partecipanti:</h3>
+
+                    {corsoUsers ? (
+                        corsoUsers.map((user) => {
+                            const userData = getUser(user);
+                            return <p key={userData.id}>{userData.nome} {userData.cognome}</p>;
+                        })
+                    ) : null}
 
                     {/*{infoCorsi ? (infoCorsi.map((corso, index) => (*/}
                     {/*        <div key={index}>*/}
