@@ -28,11 +28,11 @@ const Login = () => {
                 </div>
                 <div id="login-Username" className="input-field">
                     <p>Username</p>
-                    <input id="input-username" type="text"/>
+                    <input id="input-username" className={"login-input"} type="text"/>
                 </div>
                 <div id="login-Password" className="input-field">
                     <p>Password</p>
-                    <input id="input-password" type="password"/>
+                    <input id="input-password" className={"login-input"} type="password"/>
 
                 </div>
                 <div className="login-button-container">

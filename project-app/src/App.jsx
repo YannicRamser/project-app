@@ -7,6 +7,8 @@ import Login from "./pages/Login";
 import Dashboard from './pages/Dashboard'
 import Corso, {loader} from "./pages/Corso.jsx";
 import AddingHome from "./pages/addingPages/AddingHome.jsx";
+import AddingFlashcards from "./pages/addingPages/AddingFlashcards.jsx";
+import AddingTest from "./pages/addingPages/AddingTest.jsx";
 
 
 const router = createBrowserRouter([
@@ -14,7 +16,9 @@ const router = createBrowserRouter([
     {path: '/login', element: <Login />},
     {path: '/Dashboard', element: <Dashboard /> },
     {path: '/corso/:corsoId', element: <Corso />, loader: loader },
-    {path: '/adding', element: <AddingHome />}
+    {path: '/adding', element: <AddingHome />, loader: loader },
+    {path: "/adding/flashcards", element: <AddingFlashcards />, loader: loader },
+    {path: '/adding/test', element: <AddingTest />, loader: loader },
 ])
 
 function App() {

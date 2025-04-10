@@ -46,7 +46,7 @@ export default function Corso() {
                     <h2>{corsoInfo.nome}, {corsoInfo.descrizione}</h2>
                     <h2>Home</h2>
                     {userRole === "docente" ? (
-                        <button>Non fa ancora nulla</button>
+                        <button onClick={window.location.href = "/adding"}>+</button>
                     ) : null}
                     <div className="line"></div>
 

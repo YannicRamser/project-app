@@ -26,13 +26,13 @@ export default function AddingHome() {
                 value={selectedValue}
                 onChange={handleChange}
                 options={options}
-                placeholder="Agguingi..."
+                placeholder="Aggiungi..."
             />
 
             {selectedValue && selectedValue.value === "compito" ? <AddingCompito /> : null}
             {selectedValue && selectedValue.value === "file" ? <AddingFile /> : null}
-            {selectedValue && selectedValue.value === "test" ? <AddingTest /> : null}
-            {selectedValue && selectedValue.value === "flashcards" ? <AddingFlashcards /> : null}
+            {selectedValue && selectedValue.value === "test" ? window.location.href = "/adding/test" : null}
+            {selectedValue && selectedValue.value === "flashcards" ? window.location.href = "/adding/flashcards" : null}
         < />
     )
 }

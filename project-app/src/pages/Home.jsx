@@ -35,25 +35,24 @@ export default function Home() {
 
             <div id="home-corsiList"></div>
             {infoCorsi ? (infoCorsi.map((corso, index) => (
+                            <div key={index}>
+                                <div className="home-corsoContainer">
+                                    <a href={`/corso/${corso.id}`}>
+                                        <h2>{corso.nome}</h2>
+                                    </a>
 
-                <div key={index}>
-            <div className="home-corsoContainer">
-                <a href={`/corso/${corso.id}`}>
-                    <h2>{corso.nome}</h2>
-                </a>
-
-                <p>Anno: {corso.anno}</p>
-                <p>Docente: {getDocente(corso.docente).nome} {getDocente(corso.docente).cognome}</p>
-            </div>
+                                    <p>Anno: {corso.anno}</p>
+                                    <p>Docente: {getDocente(corso.docente).nome} {getDocente(corso.docente).cognome}</p>
+                                </div>
+                            </div>
+                        )
+                    )
+                ) :
+                (
+                    <h1 style={{color: 'red'}}>Error nessun corso!</h1>
+                )
+            }
         </div>
     )
-)
-) :
-    (
-        <h1 style={{color: 'red'}}>Error nessun corso!</h1>
-    )
-}
-</div>
-)
-    ;
+        ;
 };
