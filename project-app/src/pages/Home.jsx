@@ -1,17 +1,13 @@
 import React from 'react';
 import {useLoaderData} from "react-router-dom";
 import {Cookies} from "react-cookie";
+import {getCookie} from "./Login.jsx";
 
 
 export default function Home() {
     let infoCorsi = useLoaderData().corsi.results;
 
-    const cookies = new Cookies();
-    const userId = parseInt(cookies.get("userId"));
-
-    if (cookies.get("userId") === null) {
-        window.location.href = "/login";
-    }
+    const userId = getCookie()
 
     function getRole() {
         // eslint-disable-next-line react-hooks/rules-of-hooks

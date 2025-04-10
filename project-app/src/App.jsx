@@ -14,7 +14,7 @@ import AddingTest from "./pages/addingPages/AddingTest.jsx";
 const router = createBrowserRouter([
     {path: '/', element: <Home />, loader: loader },
     {path: '/login', element: <Login />},
-    {path: '/Dashboard', element: <Dashboard /> },
+    {path: '/Dashboard', element: <Dashboard />, loader: loader },
     {path: '/corso/:corsoId', element: <Corso />, loader: loader },
     {path: '/adding', element: <AddingHome />, loader: loader },
     {path: "/adding/flashcards", element: <AddingFlashcards />, loader: loader },
