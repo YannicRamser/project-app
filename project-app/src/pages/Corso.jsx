@@ -47,29 +47,43 @@ export default function Corso() {
         <div id="corso-container">
             {corsoInfo ? (
                 <>
-                    <h2>{corsoInfo.nome}, {corsoInfo.descrizione}</h2>
-                    <h2>Home</h2>
+                    <h2>{corsoInfo.nome} - {corsoInfo.descrizione}</h2>
+
+                    {/*<h2>Home</h2>*/}
                     {userRole === "docente" ? (
                         <Link to="/adding">
                             <button>+</button>
                         </Link>
                     ) : null}
-                    <div className="line"></div>
 
+                    <div className="line"></div>
                     <p>Docente: {docente.nome} {docente.cognome}</p>
                     <p>Anno: {corsoInfo.anno}</p>
 
-                    inserire il contenuto del corso qui
+                    {/*inserire il contenuto del corso qui*/}
 
                     <div className="line"></div>
-                    <h3>Partecipanti:</h3>
+                    <h3>Teoria</h3>
 
+                    <div className="line"></div>
+                    <h3>Compiti</h3>
+
+                    <div className="line"></div>
+                    <h3>Flashcards</h3>
+
+                    <div className="line"></div>
+                    <h3>Verifiche</h3>
+
+                    <div className="line"></div>
+
+                    <h3>Partecipanti</h3>
                     {corsoUsers ? (
                         corsoUsers.map((user) => {
                             const userData = getUser(user);
                             return <p key={userData.id}>{userData.nome} {userData.cognome}</p>;
                         })
                     ) : null}
+
 
                     {/*{infoCorsi ? (infoCorsi.map((corso, index) => (*/}
                     {/*        <div key={index}>*/}
