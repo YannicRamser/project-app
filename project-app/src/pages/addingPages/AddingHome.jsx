@@ -4,8 +4,17 @@ import AddingCompito from "./AddingCompito.jsx";
 import AddingFile from "./AddingFile.jsx";
 import AddingTest from "./AddingTest.jsx";
 import AddingFlashcards from "./AddingFlashcards.jsx";
+import {Cookies} from "react-cookie";
+import {useLoaderData} from "react-router-dom";
 
 export default function AddingHome() {
+    const cookies = new Cookies();
+    const userId = cookies.get("userId");
+    const userRole = useLoaderData().user.results.filter(user => user.id === userId)[0].ruolo
+
+    if (userRole !== "docente") {
+        window.location.href = "/";
+    }
 
     const options = [
         {value: 'compito', label: 'Compito'},

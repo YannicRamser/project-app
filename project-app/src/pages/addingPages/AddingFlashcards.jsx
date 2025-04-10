@@ -1,9 +1,17 @@
 import React, {useState} from "react";
 import Select from "react-select";
 import {useLoaderData} from "react-router-dom";
+import {Cookies} from "react-cookie";
 
 export default function AddingFlashcards() {
-    console.log(useLoaderData());
+    const cookies = new Cookies();
+    const userId = cookies.get("userId");
+    const userRole = useLoaderData().user.results.filter(user => user.id === userId)[0].ruolo
+
+    if (userRole !== "docente") {
+        window.location.href = "/";
+    }
+
     let corsi = useLoaderData().corsi.results;
     let options = [];
 

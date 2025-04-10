@@ -1,4 +1,4 @@
-import {useLoaderData, useParams} from 'react-router-dom'
+import {Link, useLoaderData, useParams} from 'react-router-dom'
 import "./Corso.css"
 import {Cookies} from "react-cookie";
 import React from "react";
@@ -25,6 +25,7 @@ export default function Corso() {
     const cookies = new Cookies();
     const userId = cookies.get("userId");
     const userRole = useLoaderData().user.results.filter(user => user.id === userId)[0].ruolo
+    console.log(userRole)
 
     const corsoInfo = useLoaderData().corsi.results.filter(checkId)[0]
     const docente = useLoaderData().user.results.filter(user => user.id === corsoInfo.docente)[0];
@@ -46,7 +47,9 @@ export default function Corso() {
                     <h2>{corsoInfo.nome}, {corsoInfo.descrizione}</h2>
                     <h2>Home</h2>
                     {userRole === "docente" ? (
-                        <button onClick={window.location.href = "/adding"}>+</button>
+                        <Link to="/adding">
+                            <button>+</button>
+                        </Link>
                     ) : null}
                     <div className="line"></div>
 

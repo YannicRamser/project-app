@@ -2,9 +2,17 @@ import {useLoaderData} from "react-router-dom";
 import React, {useState} from "react";
 import Select from "react-select";
 import AddingCompito from "./AddingCompito.jsx";
+import {Cookies} from "react-cookie";
 
 export default function AddingTest() {
-    console.log(useLoaderData());
+    const cookies = new Cookies();
+    const userId = cookies.get("userId");
+    const userRole = useLoaderData().user.results.filter(user => user.id === userId)[0].ruolo
+
+    if (userRole !== "docente") {
+        window.location.href = "/";
+    }
+
     let corsi = useLoaderData().corsi.results;
     let options = []
 
@@ -14,18 +22,14 @@ export default function AddingTest() {
         {value: "dScelta", label: "Domanda con scelte"},
         {value: "dVF", label: "Domanda Vero/Falso"}
     ]
-
-    let questions = {
-        dAperta: [],
-        dCompletamento: [],
-        dScelta: [],
-        dVF: []
-    };
-
     for (const corso of corsi) {
-        options.push({ value: corso.id, label: corso.nome });
+        options.push({value: corso.id, label: corso.nome});
     }
 
+    const [dAperta, setDAperta] = useState([]);
+    const [dCompletamento, setDCompletamento] = useState([]);
+    const [dScelta, setDScelta] = useState([]);
+    const [dVF, setDVF] = useState([]);
     const [selectedCorso, setSelectedCorso] = useState(null);
     const [selectedType, setSelectedType] = useState(null);
 
@@ -37,20 +41,19 @@ export default function AddingTest() {
     };
 
     function addAperta(question) {
-        questions.dAperta.push(question);
-        console.log(questions);
+        setDAperta(prevDAperta => [...prevDAperta, question]);
     }
+
     function addCompletamento(question) {
-        questions.dCompletamento.push(question);
-        console.log(questions);
+        setDCompletamento(prevDCompletamento => [...prevDCompletamento, question]);
     }
+
     function addScelta(question) {
-        questions.dScelta.push(question);
-        console.log(questions);
+        setDScelta(prevDScelta => [...prevDScelta, question]);
     }
+
     function addVF(question) {
-        questions.dVF.push(question);
-        console.log(questions);
+        setDVF(prevDVF => [...prevDVF, question]);
     }
 
     return (
@@ -80,7 +83,8 @@ export default function AddingTest() {
                             addAperta(question.value);
                             question.value = "";
                         }
-                    }}>Salva</button>
+                    }}>Salva
+                    </button>
                 </div>
             ) : null}
             {selectedType && selectedType.value === "dCompletamento" ? (
@@ -104,7 +108,8 @@ export default function AddingTest() {
                             part1.value = "";
                             part2.value = "";
                         }
-                    }}>Salva</button>
+                    }}>Salva
+                    </button>
                 </div>
             ) : null}
             {selectedType && selectedType.value === "dScelta" ? (
@@ -144,7 +149,8 @@ export default function AddingTest() {
                             answer3.value = "";
                             answer4.value = "";
                         }
-                    }}>Salva</button>
+                    }}>Salva
+                    </button>
                 </div>
             ) : null}
             {selectedType && selectedType.value === "dVF" ? (
@@ -159,78 +165,108 @@ export default function AddingTest() {
                             addVF(question.value);
                             question.value = "";
                         }
-                    }}>Salva</button>
+                    }}>Salva
+                    </button>
                 </div>
             ) : null}
 
-            <QuestionList questions={questions} />
+            <div className={"line"} style={{marginTop: "20px"}}></div>
+
+            <QuestionList questions={[dAperta, dCompletamento, dScelta, dVF]}/>
         </div>
     )
 }
 
-function QuestionList({ questions }) {
+function QuestionList({questions}) {
+    console.log("Questions prop:", questions);
+
     return (
         <div>
-            {questions.dAperta.map((exercise, index) => (
-                <QuestionAperta key={index} exercise={exercise} index={index} />
+            {questions[0].map((exercise, index) => (
+                <QuestionAperta key={index} exercise={exercise} index={index}/>
             ))}
-            {questions.dCompletamento.map((exercise, index) => (
-                <QuestionComp key={index} exercise={exercise} index={index} />
+
+
+            {questions[1].map((exercise, index) => (
+                <QuestionComp key={index} exercise={exercise} index={index}/>
             ))}
-            {questions.dScelta.map((exercise, index) => (
-                <QuestionScelta key={index} exercise={exercise} index={index} />
+            {questions[2].map((exercise, index) => (
+                <QuestionScelta key={index} exercise={exercise} index={index}/>
             ))}
-            {questions.dVF.map((exercise, index) => (
-                <QuestionVF key={index} exercise={exercise} index={index} />
+            {questions[3].map((exercise, index) => (
+                <QuestionVF key={index} exercise={exercise} index={index}/>
             ))}
         </div>
     );
 }
 
-function QuestionAperta({ exercise }) {
+function QuestionAperta({exercise}) {
     return (
         <>
-            <p>{exercise.question}</p>
+            <h4>{exercise}</h4>
             <input type="text"/>
         </>
     );
 }
 
-function QuestionComp({ exercise }) {
+function QuestionComp({exercise}) {
     return (
         <>
-            <p>{exercise.part1}</p>
-            <input type="text"/>
-            <p>{exercise.part2}</p>
+            <h4>Completa la frase</h4>
+            <div style={{display: "flex"}}>
+                <p>{exercise.part1}</p>
+                <div style={{margin: "auto 5px"}}>
+                    <input type="text"/>
+                </div>
+                <p>{exercise.part2}</p>
+            </div>
+        </>
+
+    );
+}
+
+function QuestionScelta({exercise}) {
+    return (
+        <>
+            <h4>{exercise.question}</h4>
+
+            <div style={{display: "flex", flexDirection: "column"}}>
+                <div>
+                    <input type="checkbox" id="answer1" name="answer1"/>
+                    <label htmlFor={"answer1"}>{exercise.answer1}</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="answer2" name="answer2"/>
+                    <label htmlFor={"answer2"}>{exercise.answer2}</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="answer3" name="answer3"/>
+                    <label htmlFor={"answer3"}>{exercise.answer3}</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="answer4" name="answer4"/>
+                    <label htmlFor={"answer4"}>{exercise.answer4}</label>
+                </div>
+            </div>
         </>
     );
 }
 
-function QuestionScelta({ exercise }) {
+function QuestionVF({exercise}) {
     return (
         <>
-            <p>{exercise.question}</p>
-
-            <input type="checkbox" id="answer1" name="answer1" />
-            <label htmlFor={"answer1"}>{exercise.answer1}</label>
-
-            <input type="checkbox" id="answer2" name="answer2" />
-            <label htmlFor={"answer2"}>{exercise.answer2}</label>
-
-            <input type="checkbox" id="answer3" name="answer3" />
-            <label htmlFor={"answer3"}>{exercise.answer3}</label>
-
-            <input type="checkbox" id="answer4" name="answer4" />
-            <label htmlFor={"answer4"}>{exercise.answer4}</label>
+            <h4>{exercise}</h4>
+            <div style={{display: "flex", flexDirection: "column"}}>
+                <div>
+                    <input id={"veroInput"} type="checkbox" value={"Vero"}/>
+                    <label htmlFor="veroInput">Vero</label>
+                </div>
+                <div>
+                    <input id={"falsoInput"} type="checkbox" value={"Falso"}/>
+                    <label htmlFor="falsoInput">Falso</label>
+                </div>
+            </div>
         </>
-    );
-}
-
-function QuestionVF({ exercise }) {
-    return (
-        <>
-            <p>{exercise.question}</p>
-            <input type="text"/>
-        </>
-    );
+    )
+        ;
 }

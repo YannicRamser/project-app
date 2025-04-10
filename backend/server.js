@@ -71,7 +71,7 @@ app.get("/api/corso/partecipante/:userId", async (req, res) => {
 });
 
 app.get("/api/users", async (req, res) => {
-    const query = "SELECT id, nome, cognome FROM utenti";
+    const query = "SELECT id, nome, cognome, ruolo FROM utenti";
     try{
         const [results] = await db.query(query)
         if (results.length === 0) {

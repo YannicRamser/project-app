@@ -7,6 +7,7 @@ FE
     cd project.app
     npm install
     npm install react-cookie
+    npm install react-select
 
 ## Run the BE
 
