@@ -43,15 +43,12 @@ export default function AddingTest() {
     function addAperta(question) {
         setDAperta(prevDAperta => [...prevDAperta, question]);
     }
-
     function addCompletamento(question) {
         setDCompletamento(prevDCompletamento => [...prevDCompletamento, question]);
     }
-
     function addScelta(question) {
         setDScelta(prevDScelta => [...prevDScelta, question]);
     }
-
     function addVF(question) {
         setDVF(prevDVF => [...prevDVF, question]);
     }

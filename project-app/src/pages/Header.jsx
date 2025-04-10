@@ -4,6 +4,8 @@ import {Cookies} from "react-cookie";
 const cookies = new Cookies();
 
 export default function Header() {
+    const delay = ms => new Promise(res => setTimeout(res, ms));
+
     return (
         <>
             <div id="header-container">
@@ -17,17 +19,18 @@ export default function Header() {
                         <h2 id="header-navIcon"><a href="/dashboard">Dashboard</a></h2>
                     </div>
 
-                    {cookies.get("userId") !== null ? (
+                    {cookies.get("userId") !== undefined ? (
                         <img
                             id="header-settings"
                             src="/settings-icon.png"
                             width={40}
                             height={40}
                             alt="Settings"
-                            onClick={() => {
+                            onClick={async () => {
                                 const exit = window.confirm("Vuoi uscire dal sito?");
                                 if (exit) {
-                                    cookies.set("userId", null);
+                                    cookies.remove("userId");
+                                    await delay(500);
                                     window.location.href = "/login";
                                 }
                             }}

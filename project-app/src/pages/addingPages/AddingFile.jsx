@@ -31,16 +31,23 @@ export default function AddingFile() {
                 placeholder="Corso"
             />
 
-            <h2>Aggiungi un nuovo file</h2>
+            <h3>Aggiungi un nuovo file</h3>
 
             <input id={"fileInput"} type="file"/>
 
             <button onClick={() => {
-                const document = document.querySelector("#fileInput");
+                const importedFile = document.querySelector("#fileInput");
 
-                const file = { corsoId: selectedCorso.id, file: file };
+                const file = { corsoId: selectedCorso.value, file: importedFile.value };
 
-                handleAddingFile(file);
+
+
+                if (file) {
+                    handleAddingFile(file);
+                    document.value = ""
+                }
+
+
             }}>Salva</button>
         </div>
     )

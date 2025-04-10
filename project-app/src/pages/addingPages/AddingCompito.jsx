@@ -23,7 +23,7 @@ export default function AddingCompito() {
 
     return (
         <div style={{maxWidth: "500px", margin: "0 auto", padding: "1rem"}}>
-            <h2>Aggiungi un nuovo compito</h2>
+            <h3>Aggiungi un nuovo compito</h3>
             <Select
                 value={selectedCorso}
                 onChange={handleChangeCorso}
@@ -41,13 +41,20 @@ export default function AddingCompito() {
             <input id={"compitoDeadline"} type="datetime-local"/>
 
             <button onClick={() => {
-                const title = document.querySelector("#compitoTitle").value;
-                const desc = document.querySelector("#compitoDesc").value;
-                const deadline = document.querySelector("#compitoDeadline").value;
+                const title = document.querySelector("#compitoTitle");
+                const desc = document.querySelector("#compitoDesc");
+                const deadline = document.querySelector("#compitoDeadline");
 
-                const exercise = { nome: title, descrizione: desc, deadline: deadline, corsoId: selectedCorso.id };
+                // const question = document.querySelector("#dApertaInput"
 
-                handleAddingCompito(exercise);
+                const exercise = { nome: title.value, descrizione: desc.value, deadline: deadline.value, corsoId: selectedCorso.id };
+
+                if (exercise) {
+                    handleAddingCompito(exercise);
+                    title.value = "";
+                    desc.value = "";
+                    deadline.value = "";
+                }
             }}>Salva</button>
         </div>
     );

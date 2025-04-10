@@ -2,28 +2,31 @@ import {Link, useLoaderData, useParams} from 'react-router-dom'
 import "./Corso.css"
 import {Cookies} from "react-cookie";
 import React from "react";
+import {getCookie} from "./Login.jsx";
 
 export async function loader() {
-    const cookies = new Cookies();
-    const userId = cookies.get("userId");
+    const userId = getCookie()
 
-    if (cookies.get("userId") === null) {
+    if (userId === undefined) {
         window.location.href = "/login";
     }
 
-    const [corsi, user] = await Promise.all([
-        fetch(`http://localhost:3000/api/corso/partecipante/${userId}`).then(res => res.json()),
-        fetch("http://localhost:3000/api/users").then(res => res.json())
-    ])
+    if (userId !== undefined) {
+        const [corsi, user] = await Promise.all([
+            fetch(`http://localhost:3000/api/corso/partecipante/${userId}`).then(res => res.json()),
+            fetch("http://localhost:3000/api/users").then(res => res.json())
+        ])
 
-    return {corsi, user}
+        return {corsi, user}
+    }
+
+    return null;
 }
 
 export default function Corso() {
     const corsoId = parseInt(useParams().corsoId)
 
-    const cookies = new Cookies();
-    const userId = cookies.get("userId");
+    const userId = getCookie()
     const userRole = useLoaderData().user.results.filter(user => user.id === userId)[0].ruolo
     console.log(userRole)
 
