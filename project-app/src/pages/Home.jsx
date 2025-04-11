@@ -28,7 +28,7 @@ export default function Home() {
             <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
                 <h2>Home</h2>
                 {getRole() === "docente" ? (
-                    <button>Non fa ancora nulla</button>
+                    <button>+</button>
                 ) : null}
             </div>
             <div className="line"></div>

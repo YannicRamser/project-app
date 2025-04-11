@@ -31,7 +31,7 @@ export default function AddingHome() {
 
     return (
         <>
-            <h2>Seleziona la aggiunta cehe desidera fare</h2>
+            <h2>Seleziona la aggiunta che desidera fare</h2>
             <Select
                 value={selectedValue}
                 onChange={handleChange}

@@ -71,7 +71,7 @@ export default function AddingTest() {
             {selectedType && selectedType.value === "dAperta" ? (
                 <div>
                     <p>Domanda: </p>
-                    <input type="text" id={"dApertaInput"}/>
+                    <textarea id={"dApertaInput"} style={{minHeight: "50px", minWidth: "100%", maxWidth: "100%"}} />
 
                     <button onClick={() => {
                         const question = document.querySelector("#dApertaInput");
@@ -201,7 +201,7 @@ function QuestionAperta({exercise}) {
     return (
         <>
             <h4>{exercise}</h4>
-            <input type="text"/>
+            <textarea style={{minHeight: "100px", minWidth: "100%", maxWidth: "100%"}} />
         </>
     );
 }

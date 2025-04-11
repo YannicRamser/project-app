@@ -64,8 +64,7 @@ export default function AddingFlashcards() {
                     frontInput.value = "";
                     backInput.value = "";
                 }
-            }}>Save
-            </button>
+            }}>Save</button>
 
             <FlashcardList flashcards={flashcards} />
         </div>
@@ -101,7 +100,7 @@ function Flashcard({ flashcard, index }) {
             </div>
 
             <button onClick={toggleVisibility}>
-                {isFrontVisible ? 'Show Answer' : 'Show Question'}
+                {isFrontVisible ? 'Mostra retro' : 'Mostra fonte'}
             </button>
         </div>
     );
